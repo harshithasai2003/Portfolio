@@ -67,7 +67,7 @@ body {
     line-height: 1.2;
 }
 
-,.home-content h3{
+.home-content h3{
     font-size: 32px;
     font-weight: 700;
 }
@@ -175,7 +175,7 @@ body {
     position: absolute;
     width:400px;
     height: 400px;
-    background-image: url(https://drive.google.com/uc?export=view&id=1jKGIAq7cMGHreInwshuyDBIndjTXyfnr);
+    background-image: url(https://drive.google.com/uc?id=1itEO3JqD8SpaXKf_ybuAcwtYnewftLPn);
     border-radius: 50%;
     object-fit: contain;
 }
@@ -195,4 +195,6 @@ body {
     object-fit: contain;
 
 }
+
+
 
