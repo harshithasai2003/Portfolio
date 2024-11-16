@@ -60,6 +60,7 @@ justify-content:space-between;
 .home-content{
     max-width: 500px;
     justify-content: left;
+    text-align: justify;
 }
 
 .home-content h1{
