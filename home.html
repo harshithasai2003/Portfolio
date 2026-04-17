@@ -11,21 +11,55 @@
 
 <style>
 
-/* ================= HEADER ================= */
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 40px;
+/* ===== IMAGE ===== */
+.rounded-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
-.navbar {
+/* keeps original 400x400 size EXACTLY */
+.home-img {
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 20px;
 }
 
-/* navbar links */
+/* ===== GRADIENT BORDER CIRCLE (NEW - NO SIZE CHANGE) ===== */
+.glowing-circle {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    padding: 6px;
+
+    background: linear-gradient(45deg, #36d1dc, #ff2e88, #36d1dc);
+    background-size: 300% 300%;
+    animation: gradientMove 6s linear infinite;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* inner circle keeps image clean */
+.image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #0f172a;
+}
+
+/* animation only for border */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ===== NAVBAR THEME FIX ===== */
 .navbar a {
     position: relative;
     color: #fff;
@@ -55,7 +89,20 @@
     color: #ff2e88;
 }
 
-/* ================= LANGUAGE SWITCH ================= */
+/* ===== HEADER FIX (ONLY for positioning EN/DE at right) ===== */
+.header {
+    display: flex;
+    align-items: center;
+}
+
+/* pushes navbar content + language to right correctly */
+.navbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* language stays after Contact, far right */
 .lang-switch {
     display: flex;
     gap: 15px;
@@ -68,25 +115,10 @@
     color: #fff;
     font-size: 16px;
     cursor: pointer;
+    position: relative;
 }
 
-/* ================= HOME SECTION ================= */
-.home {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px 40px;
-}
-
-/* social icons */
-.home-sci a {
-    display: block;
-    margin: 10px 0;
-    color: #fff;
-    font-size: 20px;
-}
-
-/* button */
+/* ===== HOME CONTENT BUTTON ===== */
 .btn {
     background: linear-gradient(90deg, #36d1dc, #ff2e88);
     border: none;
@@ -94,67 +126,11 @@
     padding: 10px 25px;
     border-radius: 30px;
     transition: 0.3s;
-    display: inline-block;
-    margin-top: 15px;
 }
 
 .btn:hover {
     transform: scale(1.05);
     box-shadow: 0 0 15px rgba(255,46,136,0.4);
-}
-
-/* =========================================================
-   ✨ GRADIENT BORDER CIRCLE (CLEAN VERSION)
-========================================================= */
-
-/* outer gradient border */
-.glow-border {
-    width: 420px;
-    height: 420px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background: linear-gradient(45deg, #36d1dc, #ff2e88, #36d1dc);
-    background-size: 300% 300%;
-    animation: rotateGradient 6s linear infinite;
-
-    padding: 6px;
-}
-
-/* inner circle */
-.image-circle {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    overflow: hidden;
-    background: #0f172a; /* match page background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* image fit */
-.rounded-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-}
-
-/* gradient animation */
-@keyframes rotateGradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
 }
 
 </style>
@@ -172,6 +148,7 @@
         <a href="portfolio.html">Portfolio</a>
         <a href="contact.html">Contact</a>
 
+        <!-- ONLY repositioned (no style change to layout) -->
         <div class="lang-switch">
             <button onclick="setLanguage('en')">EN</button>
             <button onclick="setLanguage('de')">DE</button>
@@ -193,21 +170,21 @@
         <h1 id="name-de" style="display:none;">Hallo, ich bin Harshitha Sai Nallagonda</h1>
 
         <p id="text-en" align="justify">
-            Master’s student in Scientific Computing at the University of Bayreuth.
-            Interested in Data Science, AI, and Machine Learning.
+            Master’s student in Scientific Computing at the University of Bayreuth, with a strong foundation in numerical methods and algorithmic thinking.  
+            Interested in Data Science, AI, and Machine Learning for real-world and research applications.
         </p>
 
         <p id="text-de" align="justify" style="display:none;">
-            Masterstudentin im Scientific Computing an der Universität Bayreuth.
-            Interesse an Data Science, KI und Machine Learning.
+            Masterstudentin im Scientific Computing an der Universität Bayreuth mit starkem Hintergrund in numerischen Methoden und algorithmischem Denken.  
+            Interesse an Data Science, KI und Machine Learning für reale und wissenschaftliche Anwendungen.
         </p>
 
         <a href="skills.html" class="btn">Skills</a>
     </div>
 
     <div class="home-img">
-        <div class="glow-border">
-            <div class="image-circle">
+        <div class="glowing-circle">
+            <div class="image">
                 <img src="Hari_Formal1.jpg" class="rounded-image">
             </div>
         </div>
