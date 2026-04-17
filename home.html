@@ -19,14 +19,13 @@
     padding: 20px 40px;
 }
 
-/* navbar */
 .navbar {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-/* ===== NAVBAR STYLE ===== */
+/* ===== NAVBAR LINKS ===== */
 .navbar a {
     position: relative;
     color: #fff;
@@ -56,7 +55,7 @@
     color: #ff2e88;
 }
 
-/* ===== LANGUAGE SWITCH (TOP RIGHT) ===== */
+/* ===== LANGUAGE SWITCH ===== */
 .lang-switch {
     display: flex;
     gap: 15px;
@@ -70,25 +69,6 @@
     font-size: 16px;
     cursor: pointer;
     position: relative;
-}
-
-.lang-switch button::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 0%;
-    height: 2px;
-    background: linear-gradient(90deg, #36d1dc, #ff2e88);
-    transition: 0.3s;
-}
-
-.lang-switch button:hover {
-    color: #ff2e88;
-}
-
-.lang-switch button:hover::after {
-    width: 100%;
 }
 
 /* ===== HOME LAYOUT ===== */
@@ -124,24 +104,70 @@
     box-shadow: 0 0 15px rgba(255,46,136,0.4);
 }
 
-/* ===== PERFECT CIRCLE IMAGE ===== */
+/* =========================================================
+   ✨ GLOWING ANIMATED CIRCLE (NEW UPGRADE)
+========================================================= */
+
+/* outer glowing ring */
 .image-circle {
     width: 400px;
     height: 400px;
     border-radius: 50%;
-    overflow: hidden;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* image fit fix */
-.rounded-image {
+/* animated glow */
+.image-circle::before {
+    content: "";
+    position: absolute;
     width: 100%;
     height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #36d1dc, #ff2e88, #36d1dc);
+    background-size: 300% 300%;
+    animation: glowRotate 6s linear infinite;
+    filter: blur(18px);
+    z-index: 0;
+}
+
+/* inner white circle mask */
+.image-circle::after {
+    content: "";
+    position: absolute;
+    width: 92%;
+    height: 92%;
+    background: #0f172a; /* match your page background */
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* image */
+.rounded-image {
+    width: 92%;
+    height: 92%;
+    border-radius: 50%;
     object-fit: cover;
     object-position: center;
-    display: block;
+    z-index: 2;
+    position: relative;
+}
+
+/* animation keyframes */
+@keyframes glowRotate {
+    0% {
+        background-position: 0% 50%;
+        transform: rotate(0deg);
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+        transform: rotate(360deg);
+    }
 }
 
 </style>
@@ -181,12 +207,12 @@
 
         <p id="text-en" align="justify">
             Master’s student in Scientific Computing at the University of Bayreuth, with a strong foundation in numerical methods and algorithmic thinking.  
-            Interested in Data Science, AI, and Machine Learning for real-world and research applications.
+            Interested in Data Science, AI, and Machine Learning.
         </p>
 
         <p id="text-de" align="justify" style="display:none;">
             Masterstudentin im Scientific Computing an der Universität Bayreuth mit starkem Hintergrund in numerischen Methoden und algorithmischem Denken.  
-            Interesse an Data Science, KI und Machine Learning für reale und wissenschaftliche Anwendungen.
+            Interesse an Data Science, KI und Machine Learning.
         </p>
 
         <a href="skills.html" class="btn">Skills</a>
