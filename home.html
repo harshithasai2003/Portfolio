@@ -11,7 +11,7 @@
 
 <style>
 
-/* ===== HEADER ===== */
+/* ================= HEADER ================= */
 .header {
     display: flex;
     align-items: center;
@@ -25,7 +25,7 @@
     gap: 20px;
 }
 
-/* ===== NAVBAR LINKS ===== */
+/* navbar links */
 .navbar a {
     position: relative;
     color: #fff;
@@ -55,7 +55,7 @@
     color: #ff2e88;
 }
 
-/* ===== LANGUAGE SWITCH ===== */
+/* ================= LANGUAGE SWITCH ================= */
 .lang-switch {
     display: flex;
     gap: 15px;
@@ -68,10 +68,9 @@
     color: #fff;
     font-size: 16px;
     cursor: pointer;
-    position: relative;
 }
 
-/* ===== HOME LAYOUT ===== */
+/* ================= HOME SECTION ================= */
 .home {
     display: flex;
     justify-content: space-between;
@@ -79,7 +78,7 @@
     padding: 50px 40px;
 }
 
-/* ===== SOCIAL ICONS ===== */
+/* social icons */
 .home-sci a {
     display: block;
     margin: 10px 0;
@@ -87,7 +86,7 @@
     font-size: 20px;
 }
 
-/* ===== BUTTON ===== */
+/* button */
 .btn {
     background: linear-gradient(90deg, #36d1dc, #ff2e88);
     border: none;
@@ -105,68 +104,56 @@
 }
 
 /* =========================================================
-   ✨ GLOWING ANIMATED CIRCLE (NEW UPGRADE)
+   ✨ GRADIENT BORDER CIRCLE (CLEAN VERSION)
 ========================================================= */
 
-/* outer glowing ring */
-.image-circle {
-    width: 400px;
-    height: 400px;
+/* outer gradient border */
+.glow-border {
+    width: 420px;
+    height: 420px;
     border-radius: 50%;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(45deg, #36d1dc, #ff2e88, #36d1dc);
+    background-size: 300% 300%;
+    animation: rotateGradient 6s linear infinite;
+
+    padding: 6px;
+}
+
+/* inner circle */
+.image-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #0f172a; /* match page background */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* animated glow */
-.image-circle::before {
-    content: "";
-    position: absolute;
+/* image fit */
+.rounded-image {
     width: 100%;
     height: 100%;
-    border-radius: 50%;
-    background: linear-gradient(45deg, #36d1dc, #ff2e88, #36d1dc);
-    background-size: 300% 300%;
-    animation: glowRotate 6s linear infinite;
-    filter: blur(18px);
-    z-index: 0;
-}
-
-/* inner white circle mask */
-.image-circle::after {
-    content: "";
-    position: absolute;
-    width: 92%;
-    height: 92%;
-    background: #0f172a; /* match your page background */
-    border-radius: 50%;
-    z-index: 1;
-}
-
-/* image */
-.rounded-image {
-    width: 92%;
-    height: 92%;
-    border-radius: 50%;
     object-fit: cover;
     object-position: center;
-    z-index: 2;
-    position: relative;
+    display: block;
 }
 
-/* animation keyframes */
-@keyframes glowRotate {
+/* gradient animation */
+@keyframes rotateGradient {
     0% {
         background-position: 0% 50%;
-        transform: rotate(0deg);
     }
     50% {
         background-position: 100% 50%;
     }
     100% {
         background-position: 0% 50%;
-        transform: rotate(360deg);
     }
 }
 
@@ -206,12 +193,12 @@
         <h1 id="name-de" style="display:none;">Hallo, ich bin Harshitha Sai Nallagonda</h1>
 
         <p id="text-en" align="justify">
-            Master’s student in Scientific Computing at the University of Bayreuth, with a strong foundation in numerical methods and algorithmic thinking.  
+            Master’s student in Scientific Computing at the University of Bayreuth.
             Interested in Data Science, AI, and Machine Learning.
         </p>
 
         <p id="text-de" align="justify" style="display:none;">
-            Masterstudentin im Scientific Computing an der Universität Bayreuth mit starkem Hintergrund in numerischen Methoden und algorithmischem Denken.  
+            Masterstudentin im Scientific Computing an der Universität Bayreuth.
             Interesse an Data Science, KI und Machine Learning.
         </p>
 
@@ -219,8 +206,10 @@
     </div>
 
     <div class="home-img">
-        <div class="image-circle">
-            <img src="Hari_Formal1.jpg" class="rounded-image">
+        <div class="glow-border">
+            <div class="image-circle">
+                <img src="Hari_Formal1.jpg" class="rounded-image">
+            </div>
         </div>
     </div>
 
