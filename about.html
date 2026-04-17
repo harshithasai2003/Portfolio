@@ -10,8 +10,8 @@
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 <style>
-    
-/* ===== IMAGE FIX ===== */
+
+/* ===== IMAGE ===== */
 .rounded-image {
     width: 380px;
     height: 380px;
@@ -20,14 +20,46 @@
     object-position: center;
 }
 
-/* Center image properly */
 .home-img {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* ===== LANGUAGE BUTTONS (NOW MATCH NAV STYLE) ===== */
+/* ===== NAVBAR THEME FIX (BLUE → PINK GRADIENT) ===== */
+.navbar a {
+    position: relative;
+    color: #fff;
+    transition: 0.3s;
+}
+
+/* underline animation */
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #36d1dc, #ff2e88);
+    transition: 0.3s;
+}
+
+/* hover effect */
+.navbar a:hover {
+    color: #ff2e88;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+/* active page */
+.navbar a.active {
+    color: #ff2e88;
+}
+
+/* ===== LANGUAGE SWITCH (MATCHES THEME) ===== */
 .lang-switch {
     display: flex;
     gap: 15px;
@@ -40,11 +72,11 @@
     color: #fff;
     font-size: 16px;
     cursor: pointer;
-    transition: 0.3s;
     position: relative;
+    transition: 0.3s;
 }
 
-/* hover effect like navbar */
+/* gradient underline like navbar */
 .lang-switch button::after {
     content: "";
     position: absolute;
@@ -52,7 +84,7 @@
     bottom: -5px;
     width: 0%;
     height: 2px;
-    background: #ff2e88;
+    background: linear-gradient(90deg, #36d1dc, #ff2e88);
     transition: 0.3s;
 }
 
@@ -63,6 +95,22 @@
 .lang-switch button:hover::after {
     width: 100%;
 }
+
+/* ===== HOME CONTENT BUTTON (KEEP MATCHING STYLE) ===== */
+.btn {
+    background: linear-gradient(90deg, #36d1dc, #ff2e88);
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255,46,136,0.4);
+}
+
 </style>
 </head>
 
@@ -78,7 +126,6 @@
         <a href="portfolio.html">Portfolio</a>
         <a href="contact.html">Contact</a>
 
-        <!-- LANGUAGE SWITCH -->
         <div class="lang-switch">
             <button onclick="setLanguage('en')">EN</button>
             <button onclick="setLanguage('de')">DE</button>
@@ -100,13 +147,13 @@
         <h1 id="name-de" style="display:none;">Hallo, ich bin Harshitha Sai Nallagonda</h1>
 
         <p id="text-en" align="justify">
-            Master’s student in the Elite Graduate Program in Scientific Computing at the University of Bayreuth, with a strong foundation in numerical methods and algorithmic thinking.  
-            Interested in leveraging Scientific Computing, Data Science, and Machine Learning to solve real-world and research-driven problems through practical, data-driven solutions.
+            Master’s student in Scientific Computing at the University of Bayreuth, with a strong foundation in numerical methods and algorithmic thinking.  
+            Interested in Data Science, AI, and Machine Learning for real-world and research applications.
         </p>
 
         <p id="text-de" align="justify" style="display:none;">
-            Masterstudentin im Elite-Studiengang Scientific Computing an der Universität Bayreuth mit starkem Hintergrund in numerischen Methoden und algorithmischem Denken.  
-            Interesse an Data Science, KI und Machine Learning zur Lösung realer und wissenschaftlicher Probleme.
+            Masterstudentin im Scientific Computing an der Universität Bayreuth mit starkem Hintergrund in numerischen Methoden und algorithmischem Denken.  
+            Interesse an Data Science, KI und Machine Learning für reale und wissenschaftliche Anwendungen.
         </p>
 
         <a href="skills.html" class="btn">Skills</a>
