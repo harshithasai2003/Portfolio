@@ -13,8 +13,8 @@
     .rounded-image {
         border-radius: 50%;
         overflow: hidden;
-        width: 700px;
-        height: 430px;
+        width: 500px;
+        height: 450px;
     }
 
     /* Language switch buttons */
@@ -25,17 +25,21 @@
     }
 
     .lang-switch button {
-        margin-left: 5px;
-        padding: 5px 10px;
+        margin-left: 8px;
+        padding: 6px 14px;
         cursor: pointer;
         border: none;
-        background: #222;
+        border-radius: 20px;
+        font-weight: bold;
         color: white;
-        border-radius: 5px;
+        background: linear-gradient(45deg, #ff416c, #ff4b2b);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        transition: 0.3s ease;
     }
 
     .lang-switch button:hover {
-        background: #555;
+        transform: scale(1.1);
+        background: linear-gradient(45deg, #36d1dc, #5b86e5);
     }
 </style>
 </head>
@@ -70,7 +74,9 @@
 
     <div class="home-content">
 
-        <h1>Hi, I am Harshitha Sai Nallagonda</h1>
+        <!-- Name (language switchable) -->
+        <h1 id="name-en">Hi, I am Harshitha Sai Nallagonda</h1>
+        <h1 id="name-de" style="display:none;">Hallo, ich bin Harshitha Sai Nallagonda</h1>
 
         <!-- English text -->
         <p id="text-en" align="justify">
@@ -90,7 +96,7 @@
     <div class="home-img">
         <div class="glowing-circle">
             <div class="image">
-                <img src="Hari_Formal.jpg" class="rounded-image">
+                <img src="Hari_Formal1.jpg" class="rounded-image">
             </div>
         </div>
     </div>
@@ -102,9 +108,15 @@ function setLanguage(lang) {
     if (lang === 'en') {
         document.getElementById('text-en').style.display = 'block';
         document.getElementById('text-de').style.display = 'none';
+
+        document.getElementById('name-en').style.display = 'block';
+        document.getElementById('name-de').style.display = 'none';
     } else {
         document.getElementById('text-en').style.display = 'none';
         document.getElementById('text-de').style.display = 'block';
+
+        document.getElementById('name-en').style.display = 'none';
+        document.getElementById('name-de').style.display = 'block';
     }
 }
 </script>
