@@ -1,74 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <style>
-  #google_translate_element {
-    text-align: right; /* Aligns the element to the right */
-  }
-</style>
 <meta charset="UTF-8"> 
-<meta http-equiv="X-UA-Compatible"
-content="IE=edge">
- <meta name="viewport"
-content="width=device-width, initial-scale=1. 0">
-<title>Portfolio </title> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfolio</title> 
 <link rel="stylesheet" href="style.css">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 <style>
-    /* Apply rounded borders to the image */
     .rounded-image {
-        border-radius: 50%; /* Make the borders round */
-        overflow: hidden; /* Hide any content outside the rounded borders */
-        width: 500px; /* Adjust the width of the image as needed */
-        height: 450px; /* Adjust the height of the image as needed */
+        border-radius: 50%;
+        overflow: hidden;
+        width: 700px;
+        height: 430px;
+    }
+
+    /* Language switch buttons */
+    .lang-switch {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+
+    .lang-switch button {
+        margin-left: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+        border: none;
+        background: #222;
+        color: white;
+        border-radius: 5px;
+    }
+
+    .lang-switch button:hover {
+        background: #555;
     }
 </style>
 </head>
- 
-<body>
-      <header class="header">
-      <a href="#" class="logo">Portfolio.</a>
-      <nav class="navbar"> 
-        <a href="home.html" class="active">Home</a>
-        <a href="about.html" class="active">About</a>
-        <a href="skills.html" class="active">Skills</a>
-        <a href="portfolio.html" class="active">Portfolio</a>
-         <a href="contact.html" class="active">Contact</a>
-       <div id="google_translate_element"></div>
-        </nav>
-      </header>
-<script type="text/javascript">
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-  }
 
-</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-   
- <section class="home">
-    <div class="home-sci">
-        <a href="https://www.facebook.com/nallagonda.harshithasai?mibextid=ZbWKwL"><i class='bx bxl-facebook'></i></a>
-        <a href="https://www.instagram.com/harshi0803/"><i class='bx bxl-instagram'></i></a>
-        <a href="http://www.linkedin.com/in/nallagonda-harshitha-sai-86a071228"><i class='bx bxl-linkedin'></i></a>
+<body>
+
+<header class="header">
+    <a href="#" class="logo">Portfolio.</a>
+
+    <nav class="navbar"> 
+        <a href="home.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- EN / DE switch -->
+    <div class="lang-switch">
+        <button onclick="setLanguage('en')">EN</button>
+        <button onclick="setLanguage('de')">DE</button>
     </div>
+</header>
+
+<section class="home">
+
+    <div class="home-sci">
+        <a href="#"><i class='bx bxl-facebook'></i></a>
+        <a href="#"><i class='bx bxl-instagram'></i></a>
+        <a href="#"><i class='bx bxl-linkedin'></i></a>
+    </div>
+
     <div class="home-content">
-        <h1>Hi, I am Harshitha Sai Nallagonda
-        </h1>
-        <p align="justify">
-Master’s student in the Elite Graduate Program in Scientific Computing at the University of Bayreuth, with a strong foundation in numerical methods and algorithmic thinking.
-Interested in leveraging Scientific Computing, Data Science, and Machine Learning to solve real-world and research-driven problems through practical, data-driven solutions.
-</p>
+
+        <h1>Hi, I am Harshitha Sai Nallagonda</h1>
+
+        <!-- English text -->
+        <p id="text-en" align="justify">
+            Master’s student in the Elite Graduate Program in Scientific Computing at the University of Bayreuth, with a strong foundation in numerical methods and algorithmic thinking.  
+            Interested in leveraging Scientific Computing, Data Science, and Machine Learning to solve real-world and research-driven problems through practical, data-driven solutions.
+        </p>
+
+        <!-- German text -->
+        <p id="text-de" align="justify" style="display:none;">
+            Masterstudentin im Elite-Studiengang Scientific Computing an der Universität Bayreuth mit einem starken Hintergrund in numerischen Methoden und algorithmischem Denken.  
+            Interesse an der Anwendung von Scientific Computing, Data Science und Machine Learning zur Lösung realer und forschungsorientierter Probleme durch praktische, datengetriebene Lösungen.
+        </p>
+
         <a href="skills.html" class="btn">Skills</a>
     </div>
 
     <div class="home-img">
         <div class="glowing-circle">
-            <div class="image"> <!-- fixed typo here -->
+            <div class="image">
                 <img src="Hari_Formal.jpg" class="rounded-image">
             </div>
         </div>
     </div>
- </section>
+
+</section>
+
+<script>
+function setLanguage(lang) {
+    if (lang === 'en') {
+        document.getElementById('text-en').style.display = 'block';
+        document.getElementById('text-de').style.display = 'none';
+    } else {
+        document.getElementById('text-en').style.display = 'none';
+        document.getElementById('text-de').style.display = 'block';
+    }
+}
+</script>
 
 </body>
 </html>
