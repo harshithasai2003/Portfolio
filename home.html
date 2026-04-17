@@ -11,10 +11,10 @@
 
 <style>
 
-/* ===== IMAGE ===== */
+/* ===== IMAGE (FIXED) ===== */
 .rounded-image {
-    width: 400%;
-    height: 150%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center;
     display: block;
@@ -27,7 +27,7 @@
     align-items: center;
 }
 
-/* ===== GRADIENT BORDER CIRCLE (NEW - NO SIZE CHANGE) ===== */
+/* ===== GRADIENT BORDER CIRCLE (NO SIZE CHANGE) ===== */
 .glowing-circle {
     width: 400px;
     height: 400px;
@@ -45,8 +45,8 @@
 
 /* inner circle keeps image clean */
 .image {
-    width: 350%;
-    height: 650%;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     overflow: hidden;
     background: #0f172a;
@@ -89,20 +89,18 @@
     color: #ff2e88;
 }
 
-/* ===== HEADER FIX (ONLY for positioning EN/DE at right) ===== */
+/* ===== HEADER FIX ===== */
 .header {
     display: flex;
     align-items: center;
 }
 
-/* pushes navbar content + language to right correctly */
 .navbar {
     display: flex;
     align-items: center;
     width: 100%;
 }
 
-/* language stays after Contact, far right */
 .lang-switch {
     display: flex;
     gap: 15px;
@@ -118,7 +116,7 @@
     position: relative;
 }
 
-/* ===== HOME CONTENT BUTTON ===== */
+/* ===== BUTTON ===== */
 .btn {
     background: linear-gradient(90deg, #36d1dc, #ff2e88);
     border: none;
@@ -148,7 +146,6 @@
         <a href="portfolio.html">Portfolio</a>
         <a href="contact.html">Contact</a>
 
-        <!-- ONLY repositioned (no style change to layout) -->
         <div class="lang-switch">
             <button onclick="setLanguage('en')">EN</button>
             <button onclick="setLanguage('de')">DE</button>
