@@ -1,188 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+  #google_translate_element {
+    text-align: right; 
+  }
+</style>
 <meta charset="UTF-8"> 
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Portfolio</title> 
-<link rel="stylesheet" href="style.css">
+<meta http-equiv="X-UA-Compatible"
+content="IE=edge">
+ <meta name="viewport"
+content="width=device-width, initial-scale=1. 0">
+<title>Portfolio </title> 
+<link rel="stylesheet" href="css.css">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <style>
-
-/* ===== IMAGE ===== */
-.rounded-image {
-    width: 380px;
-    height: 380px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center;
-}
-
-.home-img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* ===== NAVBAR THEME FIX (BLUE → PINK GRADIENT) ===== */
-.navbar a {
-    position: relative;
-    color: #fff;
-    transition: 0.3s;
-}
-
-/* underline animation */
-.navbar a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 0%;
-    height: 2px;
-    background: linear-gradient(90deg, #36d1dc, #ff2e88);
-    transition: 0.3s;
-}
-
-/* hover effect */
-.navbar a:hover {
-    color: #ff2e88;
-}
-
-.navbar a:hover::after {
-    width: 100%;
-}
-
-/* active page */
-.navbar a.active {
-    color: #ff2e88;
-}
-
-/* ===== LANGUAGE SWITCH (MATCHES THEME) ===== */
-.lang-switch {
-    display: flex;
-    gap: 15px;
-    margin-left: 20px;
-}
-
-.lang-switch button {
-    background: transparent;
-    border: none;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    position: relative;
-    transition: 0.3s;
-}
-
-/* gradient underline like navbar */
-.lang-switch button::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 0%;
-    height: 2px;
-    background: linear-gradient(90deg, #36d1dc, #ff2e88);
-    transition: 0.3s;
-}
-
-.lang-switch button:hover {
-    color: #ff2e88;
-}
-
-.lang-switch button:hover::after {
-    width: 100%;
-}
-
-/* ===== HOME CONTENT BUTTON (KEEP MATCHING STYLE) ===== */
-.btn {
-    background: linear-gradient(90deg, #36d1dc, #ff2e88);
-    border: none;
-    color: white;
-    padding: 10px 25px;
-    border-radius: 30px;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(255,46,136,0.4);
-}
-
+p1  {text-align:justify;}
 </style>
 </head>
 
 <body>
-
-<header class="header">
-    <a href="#" class="logo">Portfolio.</a>
-
-    <nav class="navbar"> 
+      <header class="header">
+      <a href="#" class="logo">Portfolio.</a>
+      <nav class="navbar"> 
         <a href="home.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="skills.html">Skills</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Contact</a>
+        <a href="about.html" class="active">About</a>
+        <a href="skills.html" class="active">Skills</a>
+        <a href="portfolio.html" class="active">Portfolio</a>
+         <a href="contact.html" class="active">Contact</a>
+      </nav>
+      </header>
+ <script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+  }
 
-        <div class="lang-switch">
-            <button onclick="setLanguage('en')">EN</button>
-            <button onclick="setLanguage('de')">DE</button>
-        </div>
-    </nav>
-</header>
-
-<section class="home">
-
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+ <section class="home">
     <div class="home-sci">
-        <a href="#"><i class='bx bxl-facebook'></i></a>
-        <a href="#"><i class='bx bxl-instagram'></i></a>
-        <a href="#"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://www.facebook.com/nallagonda.harshithasai?mibextid=ZbWKwL"><i class='bx bxl-facebook'></i></a>
+        <a href="https://www.instagram.com/harshi0803/"><i class='bx bxl-instagram'></i></a>
+        <a href="http://www.linkedin.com/in/nallagonda-harshitha-sai-86a071228"><i class='bx bxl-linkedin'></i></a>
     </div>
+
+    <div class="abt-img">
+                <img src="Hari_about.jpg" height="420px" width="350px">
+        </div>
 
     <div class="home-content">
+        <div><h1>About Me:- </h1></div>
+        <div>
+            <p1> Technology has always fascinated and inspired me.
+             It is a privilege to be born in the 21st Century and witness the human race push the boundaries of creativity and innovation, creating what once was impossible. 
+             Every day, the world in which we live undergoes enormous transformations. New technologies are regularly emerging in every field. 
+             Most notably, several tools and technologies have been emerging rapidly in Computer Science. I have, with great interest, observed this evolution of Computer Technology.
+             As a continuous learner, I, Harshitha Sai Nallagonda, aim to become knowledgeable about and familiar with as many tools and technologies as possible to stay up-to-date in the swiftly advancing world.
+            </p1>
+        </div></div>
 
-        <h1 id="name-en">Hi, I am Harshitha Sai Nallagonda</h1>
-        <h1 id="name-de" style="display:none;">Hallo, ich bin Harshitha Sai Nallagonda</h1>
 
-        <p id="text-en" align="justify">
-            Master’s student in Scientific Computing at the University of Bayreuth, with a strong foundation in numerical methods and algorithmic thinking.  
-            Interested in Data Science, AI, and Machine Learning for real-world and research applications.
-        </p>
+ </section>
 
-        <p id="text-de" align="justify" style="display:none;">
-            Masterstudentin im Scientific Computing an der Universität Bayreuth mit starkem Hintergrund in numerischen Methoden und algorithmischem Denken.  
-            Interesse an Data Science, KI und Machine Learning für reale und wissenschaftliche Anwendungen.
-        </p>
 
-        <a href="skills.html" class="btn">Skills</a>
-    </div>
-
-    <div class="home-img">
-        <div class="glowing-circle">
-            <div class="image">
-                <img src="Hari_Formal.jpg" class="rounded-image">
-            </div>
-        </div>
-    </div>
-
-</section>
-
-<script>
-function setLanguage(lang) {
-    if (lang === 'en') {
-        document.getElementById('text-en').style.display = 'block';
-        document.getElementById('text-de').style.display = 'none';
-        document.getElementById('name-en').style.display = 'block';
-        document.getElementById('name-de').style.display = 'none';
-    } else {
-        document.getElementById('text-en').style.display = 'none';
-        document.getElementById('text-de').style.display = 'block';
-        document.getElementById('name-en').style.display = 'none';
-        document.getElementById('name-de').style.display = 'block';
-    }
-}
-</script>
 
 </body>
 </html>
