@@ -8,12 +8,28 @@
 <title>Portfolio</title> 
 <link rel="stylesheet" href="style.css">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 <style>
+
+/* ===== HEADER LAYOUT FIX ===== */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+}
+
+/* navbar layout */
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
 
 /* ===== IMAGE ===== */
 .rounded-image {
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
     border-radius: 50%;
     object-fit: cover;
     object-position: center;
@@ -58,11 +74,11 @@
     color: #ff2e88;
 }
 
-/* ===== LANGUAGE SWITCH (MATCHES THEME) ===== */
+/* ===== LANGUAGE SWITCH (NOW TOP RIGHT) ===== */
 .lang-switch {
     display: flex;
     gap: 15px;
-    margin-left: 20px;
+    margin-left: auto;
 }
 
 .lang-switch button {
@@ -75,7 +91,7 @@
     transition: 0.3s;
 }
 
-/* gradient underline like navbar */
+/* gradient underline */
 .lang-switch button::after {
     content: "";
     position: absolute;
@@ -95,7 +111,7 @@
     width: 100%;
 }
 
-/* ===== HOME CONTENT BUTTON (KEEP MATCHING STYLE) ===== */
+/* ===== HOME CONTENT BUTTON ===== */
 .btn {
     background: linear-gradient(90deg, #36d1dc, #ff2e88);
     border: none;
@@ -125,6 +141,7 @@
         <a href="portfolio.html">Portfolio</a>
         <a href="contact.html">Contact</a>
 
+        <!-- Language switch moved inside navbar (right side) -->
         <div class="lang-switch">
             <button onclick="setLanguage('en')">EN</button>
             <button onclick="setLanguage('de')">DE</button>
