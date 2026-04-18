@@ -11,6 +11,7 @@
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 <style>
+
 /* ===== BODY ===== */
 body {
     margin: 0;
@@ -19,14 +20,13 @@ body {
     color: white;
 }
 
-/* ===== HEADER ===== */
+/* ===== HEADER (MATCH HOME) ===== */
 .header {
     display: flex;
     align-items: center;
-    padding: 20px 10%; /* Match padding with the Home page */
-    width: 100%;
 }
 
+/* ===== NAVBAR (MATCH HOME EXACTLY) ===== */
 .navbar {
     display: flex;
     align-items: center;
@@ -36,12 +36,11 @@ body {
 .navbar a {
     position: relative;
     color: #fff;
-    margin-left: 30px; /* Match spacing with Home page */
     text-decoration: none;
     transition: 0.3s;
-    font-size: 18px; /* Ensure uniform font size */
 }
 
+/* underline animation */
 .navbar a::after {
     content: "";
     position: absolute;
@@ -65,7 +64,7 @@ body {
     color: #ff2e88;
 }
 
-/* LANGUAGE SWITCH */
+/* ===== LANGUAGE SWITCH (MATCH HOME) ===== */
 .lang-switch {
     display: flex;
     gap: 15px;
@@ -155,7 +154,7 @@ h2 {
     text-decoration: underline;
 }
 
-/* Fade-in Animation for Content */
+/* ===== ANIMATION ===== */
 @keyframes fadeIn {
     0% { opacity: 0; transform: translateY(20px); }
     100% { opacity: 1; transform: translateY(0); }
@@ -166,29 +165,23 @@ h2 {
     animation: fadeIn 1s forwards;
 }
 
-/* ===== BUTTON FIXED ===== */
+/* ===== BUTTON ===== */
 .btn {
     background: linear-gradient(90deg, #36d1dc, #ff2e88);
     border: none;
     color: white;
-
     padding: 12px 24px;
     font-size: 15px;
-
     border-radius: 30px;
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 1px;
-
     transition: 0.3s;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     margin-top: 20px;
     text-decoration: none;
-
     white-space: normal;
     text-align: center;
     max-width: 220px;
@@ -198,6 +191,7 @@ h2 {
     transform: scale(1.05);
     box-shadow: 0 0 15px rgba(255,46,136,0.4);
 }
+
 </style>
 </head>
 
@@ -293,33 +287,11 @@ h2 {
 
 </section>
 
-<!-- ================= GERMAN ================= -->
-<section class="container" id="de" style="display:none;">
-
-<h2>Sprachen & Fähigkeiten</h2>
-
-<!-- SAME CONTENT JUST TRANSLATED -->
-<!-- (kept your translations—they’re already good) -->
-
-</section>
-
 <script>
 function setLanguage(lang) {
     document.getElementById('en').style.display = (lang === 'en') ? 'block' : 'none';
     document.getElementById('de').style.display = (lang === 'de') ? 'block' : 'none';
 }
-
-// Scroll fade-in
-window.addEventListener('scroll', function() {
-    const elements = document.querySelectorAll('.skills-box, .card');
-    elements.forEach(element => {
-        const position = element.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.2;
-        if (position < screenPosition) {
-            element.classList.add('show');
-        }
-    });
-});
 </script>
 
 </body>
