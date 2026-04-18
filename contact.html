@@ -30,19 +30,10 @@
     transition: 0.3s;
 }
 
-.navbar a:hover {
-    color: #ff2e88;
-}
+.navbar a:hover { color: #ff2e88; }
+.navbar a:hover::after { width: 100%; }
+.navbar a.active { color: #ff2e88; }
 
-.navbar a:hover::after {
-    width: 100%;
-}
-
-.navbar a.active {
-    color: #ff2e88;
-}
-
-/* ===== HEADER ===== */
 .header {
     display: flex;
     align-items: center;
@@ -54,7 +45,6 @@
     width: 100%;
 }
 
-/* LANGUAGE SWITCH */
 .lang-switch {
     display: flex;
     gap: 15px;
@@ -69,34 +59,24 @@
     cursor: pointer;
 }
 
-/* ===== PAGE BODY ===== */
-body {
-    margin: 0;
-    font-family: "Segoe UI", sans-serif;
-    background: #0f0f1a;
-    color: white;
-}
-
-/* ===== CONTACT SECTION ===== */
-.contact-section {
+/* ===== CONTACT PAGE LAYOUT ===== */
+.contact-page {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     gap: 60px;
     padding: 80px 10%;
     flex-wrap: wrap;
-    min-height: calc(100vh - 100px);
 }
 
-/* ===== SOCIAL ICONS — copied from home.html style.css pattern ===== */
-.home-sci {
+/* ===== SOCIAL ICONS — same as home.html ===== */
+.contact-sci {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    padding-top: 10px;
 }
 
-.home-sci a {
+.contact-sci a {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -111,7 +91,7 @@ body {
     transition: 0.3s ease;
 }
 
-.home-sci a:hover {
+.contact-sci a:hover {
     background: linear-gradient(135deg, #36d1dc, #ff2e88);
     border-color: transparent;
     color: #fff;
@@ -120,14 +100,14 @@ body {
 }
 
 /* ===== CONTACT CONTENT ===== */
-.home-content {
+.contact-content {
     max-width: 500px;
     width: 100%;
     opacity: 0;
-    animation: fadeIn 1.2s forwards;
+    animation: fadeInUp 1.2s forwards;
 }
 
-.home-content h2 {
+.contact-content h2 {
     font-size: 36px;
     font-weight: 700;
     margin-bottom: 8px;
@@ -136,19 +116,19 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
-.home-content .subtitle {
+.contact-content .subtitle {
     color: #aaa;
     font-size: 15px;
     margin-bottom: 30px;
     margin-top: 0;
 }
 
-/* Contact rows */
-.contact-row {
+/* ===== CONTACT CARDS ===== */
+.contact-card {
     display: flex;
     align-items: center;
     gap: 18px;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
     background: #1c1c2b;
     padding: 16px 20px;
     border-radius: 12px;
@@ -156,20 +136,20 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.contact-row:hover {
+.contact-card:hover {
     transform: translateX(6px);
     box-shadow: 0 4px 20px rgba(54, 209, 220, 0.15);
 }
 
-.contact-row .row-icon {
+.contact-card .card-icon {
     font-size: 26px;
     color: #36d1dc;
     flex-shrink: 0;
     line-height: 1;
 }
 
-.contact-row .row-text h3 {
-    color: rgba(255,255,255,0.6);
+.contact-card .card-text h3 {
+    color: rgba(255,255,255,0.55);
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1.2px;
@@ -177,24 +157,24 @@ body {
     font-weight: 400;
 }
 
-.contact-row .row-text p {
+.contact-card .card-text p {
     color: #eee;
     font-size: 15px;
     margin: 0;
     line-height: 1.5;
 }
 
-.contact-row .row-text a {
+.contact-card .card-text a {
     color: #eee;
     text-decoration: none;
     transition: color 0.2s;
 }
 
-.contact-row .row-text a:hover {
+.contact-card .card-text a:hover {
     color: #36d1dc;
 }
 
-.note {
+.contact-note {
     color: #ff2e88;
     font-weight: 600;
     margin-top: 26px;
@@ -202,10 +182,11 @@ body {
     align-items: center;
     gap: 8px;
     font-size: 14px;
+    font-family: "Segoe UI", sans-serif;
 }
 
-/* Fade-in Animation */
-@keyframes fadeIn {
+/* ===== ANIMATION ===== */
+@keyframes fadeInUp {
     0%   { opacity: 0; transform: translateY(20px); }
     100% { opacity: 1; transform: translateY(0); }
 }
@@ -232,10 +213,10 @@ body {
     </nav>
 </header>
 
-<section class="contact-section">
+<div class="contact-page">
 
     <!-- SOCIAL ICONS -->
-    <div class="home-sci">
+    <div class="contact-sci">
         <a href="https://www.linkedin.com/in/harshitha-sai-nallagonda-86a071228" target="_blank">
             <i class='bx bxl-linkedin'></i>
         </a>
@@ -248,90 +229,90 @@ body {
     </div>
 
     <!-- ===== ENGLISH ===== -->
-    <div class="home-content" id="en">
+    <div class="contact-content" id="en">
         <h2>Get In Touch</h2>
         <p class="subtitle">Feel free to reach out — I'd love to connect!</p>
 
-        <div class="contact-row">
-            <i class='bx bx-envelope row-icon'></i>
-            <div class="row-text">
+        <div class="contact-card">
+            <i class='bx bx-envelope card-icon'></i>
+            <div class="card-text">
                 <h3>Email</h3>
                 <p><a href="mailto:harshithasai.2003@gmail.com">harshithasai.2003@gmail.com</a></p>
             </div>
         </div>
 
-        <div class="contact-row">
-            <i class='bx bx-phone row-icon'></i>
-            <div class="row-text">
+        <div class="contact-card">
+            <i class='bx bx-phone card-icon'></i>
+            <div class="card-text">
                 <h3>Phone</h3>
                 <p>+49 0174 377 2993</p>
             </div>
         </div>
 
-        <div class="contact-row">
-            <i class='bx bxl-whatsapp row-icon'></i>
-            <div class="row-text">
+        <div class="contact-card">
+            <i class='bx bxl-whatsapp card-icon'></i>
+            <div class="card-text">
                 <h3>WhatsApp</h3>
                 <p>+91 9490568666</p>
             </div>
         </div>
 
-        <div class="contact-row">
-            <i class='bx bx-map row-icon'></i>
-            <div class="row-text">
+        <div class="contact-card">
+            <i class='bx bx-map card-icon'></i>
+            <div class="card-text">
                 <h3>Location</h3>
                 <p>Bayreuth, Germany</p>
             </div>
         </div>
 
-        <p class="note">
+        <p class="contact-note">
             <i class='bx bx-left-arrow-alt'></i> Find me on social media too!
         </p>
     </div>
 
     <!-- ===== GERMAN ===== -->
-    <div class="home-content" id="de" style="display:none;">
+    <div class="contact-content" id="de" style="display:none;">
         <h2>Kontakt aufnehmen</h2>
         <p class="subtitle">Schreib mir gerne — ich freue mich, von dir zu hören!</p>
 
-        <div class="contact-row">
-            <i class='bx bx-envelope row-icon'></i>
-            <div class="row-text">
+        <div class="contact-card">
+            <i class='bx bx-envelope card-icon'></i>
+            <div class="card-text">
                 <h3>E-Mail</h3>
                 <p><a href="mailto:harshithasai.2003@gmail.com">harshithasai.2003@gmail.com</a></p>
             </div>
         </div>
 
-        <div class="contact-row">
-            <i class='bx bx-phone row-icon'></i>
-            <div class="row-text">
+        <div class="contact-card">
+            <i class='bx bx-phone card-icon'></i>
+            <div class="card-text">
                 <h3>Telefon</h3>
                 <p>+49 0174 377 2993</p>
             </div>
         </div>
 
-        <div class="contact-row">
-            <i class='bx bxl-whatsapp row-icon'></i>
-            <div class="row-text">
+        <div class="contact-card">
+            <i class='bx bxl-whatsapp card-icon'></i>
+            <div class="card-text">
                 <h3>WhatsApp</h3>
                 <p>+91 9490568666</p>
             </div>
         </div>
 
-        <div class="contact-row">
-            <i class='bx bx-map row-icon'></i>
-            <div class="row-text">
+        <div class="contact-card">
+            <i class='bx bx-map card-icon'></i>
+            <div class="card-text">
                 <h3>Standort</h3>
                 <p>Bayreuth, Deutschland</p>
             </div>
         </div>
 
-        <p class="note">
+        <p class="contact-note">
             <i class='bx bx-left-arrow-alt'></i> Finde mich auch in sozialen Medien!
         </p>
     </div>
 
-</section>
+</div>
 
 <script>
 function setLanguage(lang) {
