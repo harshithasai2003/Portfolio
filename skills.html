@@ -7,7 +7,7 @@
 
 <title>Skills | Portfolio</title>
 
-<link rel="stylesheet" href="css.css">
+<link rel="stylesheet" href="style.css">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 <style>
@@ -23,15 +23,33 @@ body {
 /* ===== HEADER ===== */
 .header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 20px 10%;
 }
 
+.navbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* NAV LINKS */
 .navbar a {
+    position: relative;
+    color: #fff;
     margin-left: 20px;
-    color: white;
     text-decoration: none;
+    transition: 0.3s;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #36d1dc, #ff2e88);
     transition: 0.3s;
 }
 
@@ -39,23 +57,27 @@ body {
     color: #ff2e88;
 }
 
-/* LANGUAGE BUTTONS */
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.navbar a.active {
+    color: #ff2e88;
+}
+
+/* LANGUAGE SWITCH */
 .lang-switch {
+    display: flex;
+    gap: 15px;
     margin-left: auto;
 }
 
 .lang-switch button {
     background: transparent;
     border: none;
-    color: white;
+    color: #fff;
     font-size: 16px;
-    margin-left: 10px;
     cursor: pointer;
-    transition: 0.3s;
-}
-
-.lang-switch button:hover {
-    color: #ff2e88;
 }
 
 /* ===== SECTION TITLE ===== */
@@ -81,27 +103,49 @@ h2 {
 
 .skill-card {
     background: #1c1c2b;
-    padding: 20px;
+    padding: 25px 20px;
     border-radius: 12px;
     transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .skill-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.5);
 }
 
 .skill-card h3 {
     color: #36d1dc;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    text-align: center;
 }
 
-/* ⭐ IMPROVED TEXT STYLE */
-.skill-card p {
+/* Skills list style */
+.skill-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.skill-card ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    font-size: 15px;
     color: #ddd;
-    line-height: 1.8;
-    white-space: pre-line; /* allows line breaks */
-    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Custom circular bullet */
+.skill-card ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 10px;
+    height: 10px;
+    background: #36d1dc;
+    border-radius: 50%;
 }
 
 /* ===== WORK CARDS ===== */
@@ -149,13 +193,13 @@ h2 {
     <nav class="navbar">
         <a href="home.html">Home</a>
         <a href="about.html">About</a>
-        <a href="skills.html">Skills</a>
+        <a href="skills.html" class="active">Skills</a>
         <a href="portfolio.html">Portfolio</a>
         <a href="contact.html">Contact</a>
 
         <div class="lang-switch">
-            <button onclick="setLang('en')">EN</button>
-            <button onclick="setLang('de')">DE</button>
+            <button onclick="setLanguage('en')">EN</button>
+            <button onclick="setLanguage('de')">DE</button>
         </div>
     </nav>
 </header>
@@ -163,51 +207,53 @@ h2 {
 <!-- ================= SKILLS ================= -->
 <section class="container">
 
-<h2 id="skills-title">Languages & Skills</h2>
+<h2 id="skills-en">Languages & Skills</h2>
+<h2 id="skills-de" style="display:none;">Sprachen & Fähigkeiten</h2>
 
 <div class="skills-box">
 
     <div class="skill-card">
         <h3>Programming & Web</h3>
-        <p>
-Python  
-R Programming  
-Java  
-C / C++  
-SQL  
-HTML, CSS, JavaScript
-        </p>
+        <ul>
+            <li>Python</li>
+            <li>R Programming</li>
+            <li>Java</li>
+            <li>C / C++</li>
+            <li>SQL</li>
+            <li>HTML, CSS, JavaScript</li>
+        </ul>
     </div>
 
     <div class="skill-card">
         <h3>Soft Skills</h3>
-        <p>
-Creative Thinking  
-Communication Skills  
-Problem Solving  
-Analytical Thinking
-        </p>
+        <ul>
+            <li>Creative Thinking</li>
+            <li>Communication Skills</li>
+            <li>Problem Solving</li>
+            <li>Analytical Thinking</li>
+        </ul>
     </div>
 
     <div class="skill-card">
         <h3>Languages</h3>
-        <p>
-English — C1  
-German — A2  
-French — A1  
-Telugu — C1  
-Hindi — B2
-        </p>
+        <ul>
+            <li>English — C1</li>
+            <li>German — A2</li>
+            <li>French — A1</li>
+            <li>Telugu — C1</li>
+            <li>Hindi — B2</li>
+        </ul>
     </div>
 
 </div>
 
 </section>
 
-<!-- ================= WORK SAMPLES ================= -->
+<!-- ================= WORK ================= -->
 <section class="container">
 
-<h2 id="work-title">Work Samples</h2>
+<h2 id="work-en">Work Samples</h2>
+<h2 id="work-de" style="display:none;">Arbeitsproben</h2>
 
 <div class="card">
     <h3>Bachelor Thesis</h3>
@@ -218,41 +264,41 @@ Hindi — B2
 <div class="card">
     <h3>Research Paper</h3>
     <p id="t2">Brain Tumour Detection using Improved Segmentation and Machine Learning Classification</p>
-    <a href="https://drive.google.com/file/d/1z5qxzLuTEYB3gMwclJElkimCmIPnV4gJ/view?usp=sharing">View Paper</a>
+    <a href="#">View Paper</a>
 </div>
 
 <div class="card">
     <h3>R Programming</h3>
     <p id="t3">Data analysis on real-world datasets using R programming language.</p>
-    <a href="https://drive.google.com/drive/folders/1p_2QvXo0KF1HoxFEsUTW2c-vC_v1VPaL?usp=sharing">View Work</a>
+    <a href="#">View Work</a>
 </div>
 
 <div class="card">
     <h3>Python Programming</h3>
     <p id="t4">Data analysis and machine learning projects using Python.</p>
-    <a href="https://drive.google.com/drive/folders/1WbQC3weixNUMe05f_oresJzXuhpvVzBP?usp=sharing">View Work</a>
+    <a href="#">View Work</a>
 </div>
 
 <div class="card">
     <h3>Web Development</h3>
     <p id="t5">Quiz website built using HTML, CSS, and JavaScript during a hackathon.</p>
-    <a href="https://unixx77.github.io/Ideathon/main">View Project</a>
+    <a href="#">View Project</a>
 </div>
 
 </section>
 
 <script>
-function setLang(lang) {
-
-    if(lang === 'en') {
-
-        document.getElementById('skills-title').innerText = "Languages & Skills";
-        document.getElementById('work-title').innerText = "Work Samples";
-
+function setLanguage(lang) {
+    if (lang === 'en') {
+        document.getElementById('skills-en').style.display = 'block';
+        document.getElementById('skills-de').style.display = 'none';
+        document.getElementById('work-en').style.display = 'block';
+        document.getElementById('work-de').style.display = 'none';
     } else {
-
-        document.getElementById('skills-title').innerText = "Sprachen & Fähigkeiten";
-        document.getElementById('work-title').innerText = "Arbeitsproben";
+        document.getElementById('skills-en').style.display = 'none';
+        document.getElementById('skills-de').style.display = 'block';
+        document.getElementById('work-en').style.display = 'none';
+        document.getElementById('work-de').style.display = 'block';
     }
 }
 </script>
