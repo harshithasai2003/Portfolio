@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Portfolio</title>
@@ -17,12 +18,13 @@ body {
     color: white;
 }
 
-/* ---------------- HEADER ---------------- */
+/* ---------------- HEADER — matches home.html exactly ---------------- */
 .header {
     display: flex;
     align-items: center;
-    padding: 25px 10%; /* match Home/About */
+    padding: 25px 10%;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .logo {
@@ -30,14 +32,18 @@ body {
     font-weight: bold;
     background: linear-gradient(90deg, #36d1dc, #ff2e88);
     -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     color: transparent;
+    text-decoration: none;
+    white-space: nowrap;
 }
 
 .navbar {
     display: flex;
     align-items: center;
-    gap: 50px; /* same spacing as Home/About */
-    margin-left: 50px; /* push links slightly from logo */
+    gap: 35px;
+    margin-left: 50px;
+    flex: 1;
 }
 
 .navbar a {
@@ -46,6 +52,7 @@ body {
     text-decoration: none;
     transition: 0.3s;
     font-size: 17px;
+    white-space: nowrap;
 }
 
 .navbar a::after {
@@ -68,11 +75,15 @@ body {
     width: 100%;
 }
 
-/* ---------------- LANGUAGE SWITCH ---------------- */
+.navbar a.active {
+    color: #ff2e88;
+}
+
+/* ---------------- LANGUAGE SWITCH — far right ---------------- */
 .lang-switch {
     display: flex;
     gap: 15px;
-    margin-left: auto; /* pushes language buttons to the right */
+    margin-left: auto;
 }
 
 .lang-switch button {
@@ -146,8 +157,8 @@ body {
 
 /* ---------------- ANIMATION ---------------- */
 @keyframes fadeIn {
-    from {opacity: 0; transform: translateY(20px);}
-    to {opacity: 1; transform: translateY(0);}
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 </style>
 
@@ -180,7 +191,7 @@ body {
     <h1>Hello, I'm <span>Harshitha Sai Nallagonda</span></h1>
 
     <p>
-       Master’s student in the Elite Graduate Program in Scientific Computing at the University of Bayreuth.
+        Master's student in the Elite Graduate Program in Scientific Computing at the University of Bayreuth.
     </p>
 
     <h3>View my CV below</h3>
@@ -199,7 +210,7 @@ body {
     <h1>Hallo, ich bin <span>Harshitha Sai Nallagonda</span></h1>
 
     <p>
-        Masterstudentin im Elite-Studiengang „Scientific Computing“ an der Universität Bayreuth.
+        Masterstudentin im Elite-Studiengang „Scientific Computing" an der Universität Bayreuth.
     </p>
 
     <h3>Sehen Sie sich meinen Lebenslauf an</h3>
