@@ -72,6 +72,35 @@ h2 {
     margin: auto;
 }
 
+/* ===== SKILLS CARDS ===== */
+.skills-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    background: #1c1c2b;
+    padding: 20px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.skill-card h3 {
+    color: #36d1dc;
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    color: #ddd;
+    line-height: 1.5;
+}
+
 /* ===== WORK CARDS ===== */
 .card {
     background: #1c1c2b;
@@ -106,35 +135,6 @@ h2 {
     color: #ff2e88;
 }
 
-/* ===== SKILLS ===== */
-.skills-box {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.skill-card {
-    background: #1c1c2b;
-    padding: 20px;
-    border-radius: 12px;
-    transition: 0.3s;
-}
-
-.skill-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-}
-
-.skill-card h3 {
-    color: #36d1dc;
-    margin-bottom: 10px;
-}
-
-.skill-card p {
-    color: #ddd;
-    line-height: 1.5;
-}
-
 </style>
 </head>
 
@@ -157,7 +157,33 @@ h2 {
     </nav>
 </header>
 
-<!-- ===== WORK SAMPLES ===== -->
+<!-- ================= SKILLS FIRST ================= -->
+<section class="container">
+
+<h2 id="skills-title">Languages & Skills</h2>
+
+<div class="skills-box">
+
+    <div class="skill-card">
+        <h3>Programming & Web</h3>
+        <p>Python, R, Java, C, C++, SQL, HTML, CSS, JavaScript</p>
+    </div>
+
+    <div class="skill-card">
+        <h3>Soft Skills</h3>
+        <p>Creative Thinking, Communication, Problem Solving</p>
+    </div>
+
+    <div class="skill-card">
+        <h3>Languages</h3>
+        <p>English (C1), German (A2), French (A1), Telugu (C1), Hindi (B2)</p>
+    </div>
+
+</div>
+
+</section>
+
+<!-- ================= WORK SAMPLES BELOW ================= -->
 <section class="container">
 
 <h2 id="work-title">Work Samples</h2>
@@ -194,39 +220,13 @@ h2 {
 
 </section>
 
-<!-- ===== SKILLS ===== -->
-<section class="container">
-
-<h2 id="skills-title">Languages & Skills</h2>
-
-<div class="skills-box">
-
-    <div class="skill-card">
-        <h3 id="s1">Programming & Web</h3>
-        <p>Python, R, Java, C, C++, SQL, HTML, CSS, JavaScript</p>
-    </div>
-
-    <div class="skill-card">
-        <h3 id="s2">Soft Skills</h3>
-        <p>Creative Thinking, Communication, Problem Solving</p>
-    </div>
-
-    <div class="skill-card">
-        <h3 id="s3">Languages</h3>
-        <p>English (C1), German (A2), French (A1), Telugu (C1), Hindi (B2)</p>
-    </div>
-
-</div>
-
-</section>
-
 <script>
 function setLang(lang) {
 
     if(lang === 'en') {
 
-        document.getElementById('work-title').innerText = "Work Samples";
         document.getElementById('skills-title').innerText = "Languages & Skills";
+        document.getElementById('work-title').innerText = "Work Samples";
 
         document.getElementById('t1').innerText = "Harmony Forecast: Using Machine Learning to Predict Relationship Quality";
         document.getElementById('t2').innerText = "Brain Tumour Detection using Improved Segmentation and Machine Learning Classification";
@@ -236,8 +236,8 @@ function setLang(lang) {
 
     } else {
 
-        document.getElementById('work-title').innerText = "Arbeitsproben";
         document.getElementById('skills-title').innerText = "Sprachen & Fähigkeiten";
+        document.getElementById('work-title').innerText = "Arbeitsproben";
 
         document.getElementById('t1').innerText = "Harmony Forecast: Vorhersage der Beziehungsqualität mit Machine Learning";
         document.getElementById('t2').innerText = "Erkennung von Hirntumoren mit verbesserter Segmentierung und Machine Learning Klassifikation";
