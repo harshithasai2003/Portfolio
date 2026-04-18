@@ -154,8 +154,53 @@ h2 {
 .card a:hover {
     text-decoration: underline;
 }
+
+/* Fade-in Animation for Content */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.container .skills-box, .container .card {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+/* ===== BUTTON FIXED ===== */
+.btn {
+    background: linear-gradient(90deg, #36d1dc, #ff2e88);
+    border: none;
+    color: white;
+
+    padding: 12px 24px;
+    font-size: 15px;
+
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 20px;
+    text-decoration: none;
+
+    white-space: normal;
+    text-align: center;
+    max-width: 220px;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255,46,136,0.4);
+}
 </style>
 </head>
+
 <body>
 
 <header class="header">
@@ -175,7 +220,6 @@ h2 {
     </nav>
 </header>
 
-<!-- ================= ENGLISH ================= -->
 <section class="container" id="en">
 
 <h2>Languages & Skills</h2>
@@ -264,6 +308,18 @@ function setLanguage(lang) {
     document.getElementById('en').style.display = (lang === 'en') ? 'block' : 'none';
     document.getElementById('de').style.display = (lang === 'de') ? 'block' : 'none';
 }
+
+// Scroll fade-in
+window.addEventListener('scroll', function() {
+    const elements = document.querySelectorAll('.skills-box, .card');
+    elements.forEach(element => {
+        const position = element.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.2;
+        if (position < screenPosition) {
+            element.classList.add('show');
+        }
+    });
+});
 </script>
 
 </body>
