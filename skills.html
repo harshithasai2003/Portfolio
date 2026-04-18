@@ -11,8 +11,6 @@
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 <style>
-
-/* ===== GLOBAL ===== */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -20,7 +18,6 @@ body {
     color: white;
 }
 
-/* ===== HEADER ===== */
 .header {
     display: flex;
     align-items: center;
@@ -33,7 +30,6 @@ body {
     width: 100%;
 }
 
-/* NAV LINKS */
 .navbar a {
     position: relative;
     color: #fff;
@@ -65,7 +61,6 @@ body {
     color: #ff2e88;
 }
 
-/* LANGUAGE SWITCH */
 .lang-switch {
     display: flex;
     gap: 15px;
@@ -80,7 +75,6 @@ body {
     cursor: pointer;
 }
 
-/* ===== SECTION TITLE ===== */
 h2 {
     text-align: center;
     margin: 60px 0 20px;
@@ -88,13 +82,11 @@ h2 {
     color: #36d1dc;
 }
 
-/* ===== CONTAINER ===== */
 .container {
     width: 85%;
     margin: auto;
 }
 
-/* ===== SKILLS CARDS ===== */
 .skills-box {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -105,38 +97,24 @@ h2 {
     background: #1c1c2b;
     padding: 25px 20px;
     border-radius: 12px;
-    transition: 0.3s;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-.skill-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.5);
 }
 
 .skill-card h3 {
     color: #36d1dc;
-    margin-bottom: 15px;
-    font-size: 20px;
     text-align: center;
 }
 
-/* Skills list style */
 .skill-card ul {
     list-style: none;
     padding-left: 0;
 }
 
 .skill-card ul li {
-    position: relative;
     padding-left: 25px;
     margin-bottom: 10px;
-    font-size: 15px;
-    color: #ddd;
-    line-height: 1.6;
+    position: relative;
 }
 
-/* Custom circular bullet */
 .skill-card ul li::before {
     content: '';
     position: absolute;
@@ -148,28 +126,15 @@ h2 {
     border-radius: 50%;
 }
 
-/* ===== WORK CARDS ===== */
 .card {
     background: #1c1c2b;
     padding: 20px;
     margin: 15px 0;
     border-radius: 12px;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 
 .card h3 {
-    margin-bottom: 10px;
     color: #ff2e88;
-}
-
-.card p {
-    margin-bottom: 10px;
-    color: #ddd;
 }
 
 .card a {
@@ -177,11 +142,6 @@ h2 {
     text-decoration: none;
     font-weight: bold;
 }
-
-.card a:hover {
-    color: #ff2e88;
-}
-
 </style>
 </head>
 
@@ -204,11 +164,10 @@ h2 {
     </nav>
 </header>
 
-<!-- ================= SKILLS ================= -->
-<section class="container">
+<!-- ================= ENGLISH ================= -->
+<section class="container" id="en">
 
-<h2 id="skills-en">Languages & Skills</h2>
-<h2 id="skills-de" style="display:none;">Sprachen & Fähigkeiten</h2>
+<h2>Languages & Skills</h2>
 
 <div class="skills-box">
 
@@ -247,59 +206,120 @@ h2 {
 
 </div>
 
-</section>
-
-<!-- ================= WORK ================= -->
-<section class="container">
-
-<h2 id="work-en">Work Samples</h2>
-<h2 id="work-de" style="display:none;">Arbeitsproben</h2>
+<h2>Work Samples</h2>
 
 <div class="card">
     <h3>Bachelor Thesis</h3>
-    <p id="t1">Harmony Forecast: Using Machine Learning to Predict Relationship Quality</p>
+    <p>Harmony Forecast: Using Machine Learning to Predict Relationship Quality</p>
     <a href="https://ieeexplore.ieee.org/document/10675070">View Thesis</a>
 </div>
 
 <div class="card">
     <h3>Research Paper</h3>
-    <p id="t2">Brain Tumour Detection using Improved Segmentation and Machine Learning Classification</p>
+    <p>Brain Tumour Detection using Improved Segmentation and Machine Learning Classification</p>
     <a href="https://drive.google.com/file/d/1z5qxzLuTEYB3gMwclJElkimCmIPnV4gJ/view?usp=sharing">View Paper</a>
 </div>
 
 <div class="card">
     <h3>R Programming</h3>
-    <p id="t3">Data Analysis on real-world datasets using R programming language.</p>
-    <a href="https://drive.google.com/drive/folders/1p_2QvXo0KF1HoxFEsUTW2c-vC_v1VPaL?usp=sharing">View Work</a>
+    <p>Data Analysis on real-world datasets using R programming language.</p>
+    <a href="#">View Work</a>
 </div>
 
 <div class="card">
     <h3>Python Programming</h3>
-    <p id="t4">Data Analysis and Machine Learning projects using Python.</p>
-    <a href="https://drive.google.com/drive/folders/1WbQC3weixNUMe05f_oresJzXuhpvVzBP?usp=sharing">View Work</a>
+    <p>Data Analysis and Machine Learning projects using Python.</p>
+    <a href="#">View Work</a>
 </div>
 
 <div class="card">
     <h3>Web Development</h3>
-    <p id="t5">Quiz website built using HTML, CSS, and JavaScript during a hackathon.</p>
+    <p>Quiz website built using HTML, CSS, and JavaScript during a hackathon.</p>
     <a href="https://unixx77.github.io/Ideathon/main">View Project</a>
+</div>
+
+</section>
+
+<!-- ================= GERMAN ================= -->
+<section class="container" id="de" style="display:none;">
+
+<h2>Sprachen & Fähigkeiten</h2>
+
+<div class="skills-box">
+
+    <div class="skill-card">
+        <h3>Programmierung & Web</h3>
+        <ul>
+            <li>Python</li>
+            <li>R-Programmierung</li>
+            <li>C und C++</li>
+            <li>Java</li>
+            <li>SQL</li>
+            <li>HTML, CSS, JavaScript</li>
+        </ul>
+    </div>
+
+    <div class="skill-card">
+        <h3>Soft Skills</h3>
+        <ul>
+            <li>Kreatives Denken</li>
+            <li>Kommunikationsfähigkeiten</li>
+            <li>Problemlösung</li>
+            <li>Analytisches Denken</li>
+        </ul>
+    </div>
+
+    <div class="skill-card">
+        <h3>Sprachen</h3>
+        <ul>
+            <li>Englisch — C1</li>
+            <li>Deutsch — B1</li>
+            <li>Französisch — A1</li>
+            <li>Telugu — C1</li>
+            <li>Hindi — B2</li>
+        </ul>
+    </div>
+
+</div>
+
+<h2>Arbeitsproben</h2>
+
+<div class="card">
+    <h3>Bachelorarbeit</h3>
+    <p>Harmony Forecast: Einsatz von Machine Learning zur Vorhersage von Beziehungsqualität</p>
+    <a href="https://ieeexplore.ieee.org/document/10675070">Ansehen</a>
+</div>
+
+<div class="card">
+    <h3>Forschungsarbeit</h3>
+    <p>Hirntumor-Erkennung durch verbesserte Segmentierung und Machine Learning Klassifikation</p>
+    <a href="https://drive.google.com/file/d/1z5qxzLuTEYB3gMwclJElkimCmIPnV4gJ/view?usp=sharing">Ansehen</a>
+</div>
+
+<div class="card">
+    <h3>R Programmierung</h3>
+    <p>Datenanalyse realer Datensätze mit R-Programmierung.</p>
+    <a href="#">Ansehen</a>
+</div>
+
+<div class="card">
+    <h3>Python Programmierung</h3>
+    <p>Datenanalyse und Machine Learning Projekte mit Python.</p>
+    <a href="#">Ansehen</a>
+</div>
+
+<div class="card">
+    <h3>Webentwicklung</h3>
+    <p>Quiz-Website erstellt mit HTML, CSS und JavaScript während eines Hackathons.</p>
+    <a href="https://unixx77.github.io/Ideathon/main">Projekt ansehen</a>
 </div>
 
 </section>
 
 <script>
 function setLanguage(lang) {
-    if (lang === 'en') {
-        document.getElementById('skills-en').style.display = 'block';
-        document.getElementById('skills-de').style.display = 'none';
-        document.getElementById('work-en').style.display = 'block';
-        document.getElementById('work-de').style.display = 'none';
-    } else {
-        document.getElementById('skills-en').style.display = 'none';
-        document.getElementById('skills-de').style.display = 'block';
-        document.getElementById('work-en').style.display = 'none';
-        document.getElementById('work-de').style.display = 'block';
-    }
+    document.getElementById('en').style.display = (lang === 'en') ? 'block' : 'none';
+    document.getElementById('de').style.display = (lang === 'de') ? 'block' : 'none';
 }
 </script>
 
