@@ -22,7 +22,6 @@
     display: block;
 }
 
-/* keeps original 400x400 size EXACTLY */
 .home-img {
     display: flex;
     justify-content: center;
@@ -45,7 +44,6 @@
     align-items: center;
 }
 
-/* inner circle keeps image clipped */
 .image {
     width: 100%;
     height: 100%;
@@ -54,7 +52,6 @@
     background: #0f172a;
 }
 
-/* animation only for border */
 @keyframes gradientMove {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -115,7 +112,6 @@
     color: #fff;
     font-size: 16px;
     cursor: pointer;
-    position: relative;
 }
 
 /* ===== BUTTON ===== */
@@ -158,9 +154,22 @@
 <section class="home">
 
     <div class="home-sci">
-        <a href="#"><i class='bx bxl-facebook'></i></a>
-        <a href="#"><i class='bx bxl-instagram'></i></a>
-        <a href="#"><i class='bx bxl-linkedin'></i></a>
+
+        <!-- LinkedIn FIRST -->
+        <a href="http://www.linkedin.com/in/nallagonda-harshitha-sai-86a071228">
+            <i class='bx bxl-linkedin'></i>
+        </a>
+
+        <!-- Instagram SECOND -->
+        <a href="https://www.instagram.com/harshi0803/">
+            <i class='bx bxl-instagram'></i>
+        </a>
+
+        <!-- Facebook LAST -->
+        <a href="https://www.facebook.com/nallagonda.harshithasai?mibextid=ZbWKwL">
+            <i class='bx bxl-facebook'></i>
+        </a>
+
     </div>
 
     <div class="home-content">
