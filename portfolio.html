@@ -2,27 +2,34 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"> 
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Portfolio</title>
 
-<link rel="stylesheet" href="css.css">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 <style>
+/* ---------------- BODY ---------------- */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: "Segoe UI", sans-serif;
     background: #0f0f1a;
     color: white;
 }
 
-/* HEADER */
+/* ---------------- HEADER ---------------- */
 .header {
     display: flex;
     align-items: center;
     padding: 20px 10%;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #36d1dc, #ff2e88);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .navbar {
@@ -58,7 +65,7 @@ body {
     width: 100%;
 }
 
-/* LANGUAGE BUTTONS */
+/* ---------------- LANGUAGE SWITCH ---------------- */
 .lang-switch {
     margin-left: auto;
     display: flex;
@@ -67,34 +74,73 @@ body {
 
 .lang-switch button {
     background: transparent;
-    border: none;
+    border: 1px solid #444;
     color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    transition: 0.3s;
 }
 
-/* HOME SECTION */
+.lang-switch button:hover {
+    background: #ff2e88;
+}
+
+/* ---------------- HERO SECTION ---------------- */
 .home {
     text-align: center;
     margin-top: 120px;
     padding: 20px;
+    animation: fadeIn 1s ease-in-out;
 }
 
-/* BUTTON */
+.home h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.home h1 span {
+    background: linear-gradient(90deg, #36d1dc, #ff2e88);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.home p {
+    color: #bbb;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+/* ---------------- BUTTON ---------------- */
 .btn {
     display: inline-block;
-    padding: 12px 25px;
+    padding: 14px 30px;
     background: linear-gradient(90deg, #36d1dc, #ff2e88);
     color: white;
     border-radius: 30px;
     text-decoration: none;
     margin-top: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
     transition: 0.3s;
 }
 
 .btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(255,46,136,0.4);
+    transform: scale(1.08);
+    box-shadow: 0 0 20px rgba(255,46,136,0.6);
+}
+
+/* ---------------- ICON ---------------- */
+.icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #36d1dc;
+}
+
+/* ---------------- ANIMATION ---------------- */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
 }
 </style>
 
@@ -103,10 +149,10 @@ body {
 <body>
 
 <header class="header">
-    <a href="#" class="logo">Portfolio.</a>
+    <div class="logo">Portfolio.</div>
 
     <nav class="navbar">
-        <a href="home.html" class="active">Home</a>
+        <a href="home.html">Home</a>
         <a href="about.html">About</a>
         <a href="skills.html">Skills</a>
         <a href="portfolio.html">Portfolio</a>
@@ -122,10 +168,19 @@ body {
 <!-- ================= ENGLISH ================= -->
 <section id="en" class="home">
 
-    <h2>Please click on the button below to view my CV.</h2>
+    <i class='bx bx-user icon'></i>
 
-    <a href="https://drive.google.com/file/d/1Kj1QRU4KWhUBT2thcFhQPlw5d5RGbrE_/view?usp=sharing" class="btn" target="_blank">
-        CV
+    <h1>Hello, I'm <span>Your Name</span></h1>
+
+    <p>
+        A passionate developer focused on building modern, responsive, and user-friendly websites.
+        I enjoy turning ideas into real-world digital experiences.
+    </p>
+
+    <h3>View my CV below</h3>
+
+    <a href="YOUR_CV_LINK" class="btn" target="_blank">
+        Download CV
     </a>
 
 </section>
@@ -133,10 +188,19 @@ body {
 <!-- ================= GERMAN ================= -->
 <section id="de" class="home" style="display:none;">
 
-    <h2>Bitte klicken Sie auf den Button unten, um meinen Lebenslauf anzusehen.</h2>
+    <i class='bx bx-user icon'></i>
 
-    <a href="https://drive.google.com/file/d/1Kj1QRU4KWhUBT2thcFhQPlw5d5RGbrE_/view?usp=sharing" class="btn" target="_blank">
-        Lebenslauf
+    <h1>Hallo, ich bin <span>Dein Name</span></h1>
+
+    <p>
+        Ein leidenschaftlicher Entwickler mit Fokus auf moderne, responsive und benutzerfreundliche Websites.
+        Ich verwandle Ideen in echte digitale Erlebnisse.
+    </p>
+
+    <h3>Lebenslauf ansehen</h3>
+
+    <a href="YOUR_CV_LINK" class="btn" target="_blank">
+        Lebenslauf herunterladen
     </a>
 
 </section>
