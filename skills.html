@@ -39,6 +39,25 @@ body {
     color: #ff2e88;
 }
 
+/* LANGUAGE BUTTONS */
+.lang-switch {
+    margin-left: auto;
+}
+
+.lang-switch button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.lang-switch button:hover {
+    color: #ff2e88;
+}
+
 /* ===== SECTION TITLE ===== */
 h2 {
     text-align: center;
@@ -47,13 +66,13 @@ h2 {
     color: #36d1dc;
 }
 
-/* ===== CARDS ===== */
+/* ===== CONTAINER ===== */
 .container {
     width: 85%;
     margin: auto;
 }
 
-/* WORK CARDS */
+/* ===== WORK CARDS ===== */
 .card {
     background: #1c1c2b;
     padding: 20px;
@@ -87,7 +106,7 @@ h2 {
     color: #ff2e88;
 }
 
-/* ===== SKILLS BOX ===== */
+/* ===== SKILLS ===== */
 .skills-box {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -130,41 +149,46 @@ h2 {
         <a href="skills.html">Skills</a>
         <a href="portfolio.html">Portfolio</a>
         <a href="contact.html">Contact</a>
+
+        <div class="lang-switch">
+            <button onclick="setLang('en')">EN</button>
+            <button onclick="setLang('de')">DE</button>
+        </div>
     </nav>
 </header>
 
 <!-- ===== WORK SAMPLES ===== -->
 <section class="container">
 
-<h2>Work Samples</h2>
+<h2 id="work-title">Work Samples</h2>
 
 <div class="card">
     <h3>Bachelor Thesis</h3>
-    <p>Harmony Forecast: Using Machine Learning to Predict Relationship Quality</p>
+    <p id="t1">Harmony Forecast: Using Machine Learning to Predict Relationship Quality</p>
     <a href="https://ieeexplore.ieee.org/document/10675070">View Thesis</a>
 </div>
 
 <div class="card">
     <h3>Research Paper</h3>
-    <p>Brain Tumour Detection using Improved Segmentation and Machine Learning Classification</p>
+    <p id="t2">Brain Tumour Detection using Improved Segmentation and Machine Learning Classification</p>
     <a href="https://drive.google.com/file/d/1z5qxzLuTEYB3gMwclJElkimCmIPnV4gJ/view?usp=sharing">View Paper</a>
 </div>
 
 <div class="card">
     <h3>R Programming</h3>
-    <p>Data analysis on real-world datasets using R programming language.</p>
+    <p id="t3">Data analysis on real-world datasets using R programming language.</p>
     <a href="https://drive.google.com/drive/folders/1p_2QvXo0KF1HoxFEsUTW2c-vC_v1VPaL?usp=sharing">View Work</a>
 </div>
 
 <div class="card">
     <h3>Python Programming</h3>
-    <p>Data analysis and machine learning projects using Python.</p>
+    <p id="t4">Data analysis and machine learning projects using Python.</p>
     <a href="https://drive.google.com/drive/folders/1WbQC3weixNUMe05f_oresJzXuhpvVzBP?usp=sharing">View Work</a>
 </div>
 
 <div class="card">
     <h3>Web Development</h3>
-    <p>Quiz website built using HTML, CSS, and JavaScript during a hackathon.</p>
+    <p id="t5">Quiz website built using HTML, CSS, and JavaScript during a hackathon.</p>
     <a href="https://unixx77.github.io/Ideathon/main">View Project</a>
 </div>
 
@@ -173,28 +197,56 @@ h2 {
 <!-- ===== SKILLS ===== -->
 <section class="container">
 
-<h2>Languages & Skills</h2>
+<h2 id="skills-title">Languages & Skills</h2>
 
 <div class="skills-box">
 
     <div class="skill-card">
-        <h3>Programming & Web</h3>
+        <h3 id="s1">Programming & Web</h3>
         <p>Python, R, Java, C, C++, SQL, HTML, CSS, JavaScript</p>
     </div>
 
     <div class="skill-card">
-        <h3>Soft Skills</h3>
+        <h3 id="s2">Soft Skills</h3>
         <p>Creative Thinking, Communication, Problem Solving</p>
     </div>
 
     <div class="skill-card">
-        <h3>Languages</h3>
+        <h3 id="s3">Languages</h3>
         <p>English (C1), German (A2), French (A1), Telugu (C1), Hindi (B2)</p>
     </div>
 
 </div>
 
 </section>
+
+<script>
+function setLang(lang) {
+
+    if(lang === 'en') {
+
+        document.getElementById('work-title').innerText = "Work Samples";
+        document.getElementById('skills-title').innerText = "Languages & Skills";
+
+        document.getElementById('t1').innerText = "Harmony Forecast: Using Machine Learning to Predict Relationship Quality";
+        document.getElementById('t2').innerText = "Brain Tumour Detection using Improved Segmentation and Machine Learning Classification";
+        document.getElementById('t3').innerText = "Data analysis on real-world datasets using R programming language.";
+        document.getElementById('t4').innerText = "Data analysis and machine learning projects using Python.";
+        document.getElementById('t5').innerText = "Quiz website built using HTML, CSS, and JavaScript during a hackathon.";
+
+    } else {
+
+        document.getElementById('work-title').innerText = "Arbeitsproben";
+        document.getElementById('skills-title').innerText = "Sprachen & Fähigkeiten";
+
+        document.getElementById('t1').innerText = "Harmony Forecast: Vorhersage der Beziehungsqualität mit Machine Learning";
+        document.getElementById('t2').innerText = "Erkennung von Hirntumoren mit verbesserter Segmentierung und Machine Learning Klassifikation";
+        document.getElementById('t3').innerText = "Datenanalyse realer Datensätze mit der Programmiersprache R.";
+        document.getElementById('t4').innerText = "Datenanalyse und Machine-Learning-Projekte mit Python.";
+        document.getElementById('t5').innerText = "Quiz-Website erstellt mit HTML, CSS und JavaScript während eines Hackathons.";
+    }
+}
+</script>
 
 </body>
 </html>
