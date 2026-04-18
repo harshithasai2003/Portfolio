@@ -7,7 +7,6 @@
 
 <title>Contact | Portfolio</title>
 
-    
 <link rel="stylesheet" href="style.css">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
@@ -80,88 +79,146 @@
     flex-wrap: wrap;
     font-family: "Segoe UI", sans-serif;
     color: white;
+    min-height: calc(100vh - 100px);
 }
 
-.home-content {
-    max-width: 500px;
-    opacity: 0;
-    animation: fadeIn 1.5s forwards;
-}
-
-.home-content h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    background: linear-gradient(90deg, #36d1dc, #ff2e88);
-    -webkit-background-clip: text;
-    color: transparent;
-}
-
-.home-content h3 {
-    color: #36d1dc;
-    margin-top: 20px;
-    margin-bottom: 5px;
-    font-size: 18px;
-}
-
-.home-content p {
-    color: #ccc;
-    font-size: 15px;
-    margin: 0 0 10px 0;
-    line-height: 1.6;
-}
-
-.home-content .note {
-    color: #ff2e88;
-    font-weight: bold;
-    margin-top: 20px;
-    display: block;
-}
-
-/* ===== SOCIAL ICONS (UPDATED LIKE HOME) ===== */
+/* ===== SOCIAL ICONS — EXACTLY LIKE home.html ===== */
 .home-sci {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
 }
 
 .home-sci a {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: 2px solid #36d1dc;
-    color: #36d1dc;
-    font-size: 22px;
-    transition: 0.3s;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    font-size: 20px;
+    color: #fff;
     text-decoration: none;
+    transition: 0.3s ease;
 }
 
 .home-sci a:hover {
-    background: #36d1dc;
-    color: #0f0f1a;
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(54, 209, 220, 0.5);
+    background: linear-gradient(90deg, #36d1dc, #ff2e88);
+    border-color: transparent;
+    color: #fff;
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 46, 136, 0.4);
 }
 
-/* CONTACT IMAGE */
+/* ===== CONTACT IMAGE ===== */
 .ctc-img img {
-    width: 350px;
-    height: 420px;
+    width: 320px;
+    height: 400px;
     object-fit: cover;
     border-radius: 12px;
     transition: 0.4s;
+    border: 3px solid rgba(54, 209, 220, 0.3);
 }
 
 .ctc-img img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transform: scale(1.04);
+    box-shadow: 0 10px 30px rgba(54, 209, 220, 0.25);
+    border-color: rgba(54, 209, 220, 0.7);
+}
+
+/* ===== CONTACT CONTENT ===== */
+.home-content {
+    max-width: 460px;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+.home-content h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    background: linear-gradient(90deg, #36d1dc, #ff2e88);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.home-content .subtitle {
+    color: #aaa;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+/* Contact rows */
+.contact-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 22px;
+    background: #1c1c2b;
+    padding: 16px 20px;
+    border-radius: 12px;
+    transition: 0.3s;
+    border-left: 3px solid #36d1dc;
+}
+
+.contact-row:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 20px rgba(54, 209, 220, 0.15);
+}
+
+.contact-row .row-icon {
+    font-size: 24px;
+    color: #36d1dc;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.contact-row .row-text h3 {
+    color: #fff;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 4px 0;
+    opacity: 0.7;
+}
+
+.contact-row .row-text p {
+    color: #eee;
+    font-size: 15px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.contact-row .row-text a {
+    color: #36d1dc;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.contact-row .row-text a:hover {
+    color: #ff2e88;
+}
+
+.note {
+    color: #ff2e88;
+    font-weight: bold;
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.note i {
+    font-size: 18px;
 }
 
 /* Fade-in Animation */
 @keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(20px); }
+    0%   { opacity: 0; transform: translateY(20px); }
     100% { opacity: 1; transform: translateY(0); }
 }
 
@@ -189,53 +246,94 @@
 
 <section class="home">
 
-    <!-- SOCIAL ICONS (MATCHED WITH HOME STYLE) -->
+    <!-- SOCIAL ICONS — same style as home.html -->
     <div class="home-sci">
-
         <a href="https://www.linkedin.com/in/harshitha-sai-nallagonda-86a071228" target="_blank">
             <i class='bx bxl-linkedin'></i>
         </a>
-
         <a href="https://www.instagram.com/harshithasai0805/" target="_blank">
             <i class='bx bxl-instagram'></i>
         </a>
-
         <a href="https://www.facebook.com/nallagonda.harshithasai?mibextid=ZbWKwL" target="_blank">
             <i class='bx bxl-facebook'></i>
         </a>
-
     </div>
 
+    <!-- CONTACT IMAGE -->
     <div class="ctc-img">
         <img src="https://tinyurl.com/ctcimg" alt="Contact Image">
     </div>
 
     <!-- ===== ENGLISH ===== -->
     <div class="home-content" id="en">
-        <h2>Contact Information</h2>
+        <h2>Get In Touch</h2>
+        <p class="subtitle">Feel free to reach out — I'd love to connect!</p>
 
-        <h3>Email Address</h3>
-        <p>harshithasai.2003@gmail.com</p>
+        <div class="contact-row">
+            <i class='bx bx-envelope row-icon'></i>
+            <div class="row-text">
+                <h3>Email</h3>
+                <p><a href="mailto:harshithasai.2003@gmail.com">harshithasai.2003@gmail.com</a></p>
+            </div>
+        </div>
 
-        <h3>Phone Number</h3>
-        <p>+49 0174 377 2993</p>
-        <p>WhatsApp: +91 9490568666</p>
+        <div class="contact-row">
+            <i class='bx bx-phone row-icon'></i>
+            <div class="row-text">
+                <h3>Phone</h3>
+                <p>+49 0174 377 2993</p>
+            </div>
+        </div>
 
-        <span class="note">My social media profiles are on the left!</span>
+        <div class="contact-row">
+            <i class='bx bxl-whatsapp row-icon'></i>
+            <div class="row-text">
+                <h3>WhatsApp</h3>
+                <p>+91 9490568666</p>
+            </div>
+        </div>
+
+        <div class="contact-row">
+            <i class='bx bx-map row-icon'></i>
+            <div class="row-text">
+                <h3>Location</h3>
+                <p>Bayreuth, Germany</p>
+            </div>
+        </div>
+
+        <p class="note"><i class='bx bx-left-arrow-alt'></i> Find me on social media too!</p>
     </div>
 
     <!-- ===== GERMAN ===== -->
     <div class="home-content" id="de" style="display:none;">
-        <h2>Kontaktinformationen</h2>
+        <h2>Kontakt aufnehmen</h2>
+        <p class="subtitle">Schreib mir gerne — ich freue mich, von dir zu hören!</p>
 
-        <h3>E-Mail-Adresse</h3>
-        <p>harshithasai.2003@gmail.com</p>
+        <div class="contact-row">
+            <i class='bx bx-envelope row-icon'></i>
+            <div class="row-text">
+                <h3>E-Mail</h3>
+                <p><a href="mailto:harshithasai.2003@gmail.com">harshithasai.2003@gmail.com</a></p>
+            </div>
+        </div>
 
-        <h3>Telefonnummer</h3>
-        <p>+49 0174 377 2993</p>
-        <p>WhatsApp: +91 9490568666</p>
+        <div class="contact-row">
+            <i class='bx bx-phone row-icon'></i>
+            <div class="row-text">
+                <h3>Telefon</h3>
+                <p>+49 0174 377 2993</p>
+            </div>
+        </div>
 
-        <span class="note">Meine Social-Media-Profile sind links!</span>
+        <div class="contact-row">
+            <i class='bx bx-map row-icon'></i>
+            <div class="row-text">
+                <h3>Standort</h3>
+                <p>Bayreuth, Deutschland</p>
+            </div>
+        </div>
+
+        <p class="note"><i class='bx bx-left-arrow-alt'></i> Finde mich auch in sozialen Medien!</p>
     </div>
 
 </section>
