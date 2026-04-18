@@ -225,7 +225,7 @@
             </p>
         </div>
 
-        <a href="contact.html" class="btn">Contact Me</a>
+        <a href="contact.html" class="btn" id="contact-btn">Contact Me</a>
 
     </div>
 
@@ -238,11 +238,13 @@ function setLanguage(lang) {
         document.getElementById('text-de').style.display = 'none';
         document.getElementById('about-en').style.display = 'block';
         document.getElementById('about-de').style.display = 'none';
+        document.getElementById('contact-btn').innerText = "Contact Me";
     } else {
         document.getElementById('text-en').style.display = 'none';
         document.getElementById('text-de').style.display = 'block';
         document.getElementById('about-en').style.display = 'none';
         document.getElementById('about-de').style.display = 'block';
+        document.getElementById('contact-btn').innerText = "Kontaktieren Sie mich";
     }
 }
 
