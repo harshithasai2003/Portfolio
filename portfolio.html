@@ -7,52 +7,16 @@
 
 <title>Portfolio</title>
 
+<link rel="stylesheet" href="style.css">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 <style>
-/* ---------------- BODY ---------------- */
-body {
-    margin: 0;
-    font-family: "Segoe UI", sans-serif;
-    background: #0f0f1a;
-    color: white;
-}
 
-/* ---------------- HEADER — matches home.html exactly ---------------- */
-.header {
-    display: flex;
-    align-items: center;
-    padding: 25px 10%;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.logo {
-    font-size: 22px;
-    font-weight: bold;
-    background: linear-gradient(90deg, #36d1dc, #ff2e88);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-    text-decoration: none;
-    white-space: nowrap;
-}
-
-.navbar {
-    display: flex;
-    align-items: center;
-    gap: 35px;
-    margin-left: 50px;
-    flex: 1;
-}
-
+/* ===== NAVBAR ===== */
 .navbar a {
     position: relative;
     color: #fff;
-    text-decoration: none;
     transition: 0.3s;
-    font-size: 17px;
-    white-space: nowrap;
 }
 
 .navbar a::after {
@@ -70,8 +34,7 @@ body {
     color: #ff2e88;
 }
 
-.navbar a:hover::after,
-.navbar a.active::after {
+.navbar a:hover::after {
     width: 100%;
 }
 
@@ -79,7 +42,19 @@ body {
     color: #ff2e88;
 }
 
-/* ---------------- LANGUAGE SWITCH — far right ---------------- */
+/* ===== HEADER ===== */
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* LANGUAGE SWITCH */
 .lang-switch {
     display: flex;
     gap: 15px;
@@ -92,19 +67,16 @@ body {
     color: #fff;
     font-size: 16px;
     cursor: pointer;
-    transition: 0.3s;
 }
 
-.lang-switch button:hover {
-    color: #36d1dc;
-}
-
-/* ---------------- HERO SECTION ---------------- */
+/* ===== HERO SECTION ===== */
 .home {
     text-align: center;
     margin-top: 120px;
     padding: 20px;
     animation: fadeIn 1s ease-in-out;
+    font-family: "Segoe UI", sans-serif;
+    color: white;
 }
 
 .home h1 {
@@ -129,7 +101,15 @@ body {
     margin-top: 20px;
 }
 
-/* ---------------- BUTTON ---------------- */
+/* ===== ICON ===== */
+.icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #36d1dc;
+    display: block;
+}
+
+/* ===== BUTTON ===== */
 .btn {
     display: inline-block;
     padding: 14px 30px;
@@ -148,20 +128,13 @@ body {
     box-shadow: 0 0 20px rgba(255,46,136,0.6);
 }
 
-/* ---------------- ICON ---------------- */
-.icon {
-    font-size: 50px;
-    margin-bottom: 20px;
-    color: #36d1dc;
-}
-
-/* ---------------- ANIMATION ---------------- */
+/* ===== ANIMATION ===== */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    to   { opacity: 1; transform: translateY(0); }
 }
-</style>
 
+</style>
 </head>
 
 <body>
