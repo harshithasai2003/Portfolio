@@ -11,7 +11,6 @@
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 <style>
-
 /* ===== BODY ===== */
 body {
     margin: 0;
@@ -20,13 +19,14 @@ body {
     color: white;
 }
 
-/* ===== HEADER (MATCH HOME) ===== */
+/* ===== HEADER ===== */
 .header {
     display: flex;
     align-items: center;
+    padding: 20px 10%; /* Match padding with Home page */
+    width: 100%;
 }
 
-/* ===== NAVBAR (MATCH HOME EXACTLY) ===== */
 .navbar {
     display: flex;
     align-items: center;
@@ -36,11 +36,12 @@ body {
 .navbar a {
     position: relative;
     color: #fff;
+    margin-left: 30px; /* Match spacing with Home page */
     text-decoration: none;
     transition: 0.3s;
+    font-size: 18px; /* Uniform font size */
 }
 
-/* underline animation */
 .navbar a::after {
     content: "";
     position: absolute;
@@ -64,7 +65,7 @@ body {
     color: #ff2e88;
 }
 
-/* ===== LANGUAGE SWITCH (MATCH HOME) ===== */
+/* LANGUAGE SWITCH */
 .lang-switch {
     display: flex;
     gap: 15px;
@@ -154,7 +155,7 @@ h2 {
     text-decoration: underline;
 }
 
-/* ===== ANIMATION ===== */
+/* Fade-in Animation for Content */
 @keyframes fadeIn {
     0% { opacity: 0; transform: translateY(20px); }
     100% { opacity: 1; transform: translateY(0); }
@@ -191,7 +192,6 @@ h2 {
     transform: scale(1.05);
     box-shadow: 0 0 15px rgba(255,46,136,0.4);
 }
-
 </style>
 </head>
 
@@ -214,6 +214,7 @@ h2 {
     </nav>
 </header>
 
+<!-- ================= ENGLISH ================= -->
 <section class="container" id="en">
 
 <h2>Languages & Skills</h2>
@@ -283,6 +284,80 @@ h2 {
     <h3>Web Development</h3>
     <p>Quiz website built using HTML, CSS, and JavaScript during a hackathon.</p>
     <a href="https://unixx77.github.io/Ideathon/main" target="_blank">View Project</a>
+</div>
+
+</section>
+
+<!-- ================= GERMAN ================= -->
+<section class="container" id="de" style="display:none;">
+
+<h2>Sprachen & Fähigkeiten</h2>
+
+<div class="skills-box">
+    <div class="skill-card">
+        <h3>Programmierung & Web</h3>
+        <ul>
+            <li>Python</li>
+            <li>R-Programmierung</li>
+            <li>C und C++</li>
+            <li>Java</li>
+            <li>SQL</li>
+            <li>HTML, CSS, JavaScript</li>
+        </ul>
+    </div>
+
+    <div class="skill-card">
+        <h3>Soft Skills</h3>
+        <ul>
+            <li>Kreatives Denken</li>
+            <li>Kommunikationsfähigkeiten</li>
+            <li>Problemlösung</li>
+            <li>Analytisches Denken</li>
+        </ul>
+    </div>
+
+    <div class="skill-card">
+        <h3>Sprachen</h3>
+        <ul>
+            <li>Englisch — C1</li>
+            <li>Deutsch — B1</li>
+            <li>Französisch — A1</li>
+            <li>Telugu — C1</li>
+            <li>Hindi — B2</li>
+        </ul>
+    </div>
+</div>
+
+<h2>Arbeitsproben</h2>
+
+<div class="card">
+    <h3>Bachelorarbeit</h3>
+    <p>Harmony Forecast: Verwendung von Machine Learning zur Vorhersage der Beziehungsqualität</p>
+    <a href="https://ieeexplore.ieee.org/document/10675070" target="_blank">Arbeit ansehen</a>
+</div>
+
+<div class="card">
+    <h3>Forschungsarbeit</h3>
+    <p>Erkennung von Gehirntumoren mit verbesserter Segmentierung und Machine-Learning-Klassifikation</p>
+    <a href="https://drive.google.com/file/d/1z5qxzLuTEYB3gMwclJElkimCmIPnV4gJ/view?usp=sharing" target="_blank">Arbeit ansehen</a>
+</div>
+
+<div class="card">
+    <h3>R-Programmierung</h3>
+    <p>Datenanalyse von realen Datensätzen mit R-Programmiersprache.</p>
+    <a href="https://drive.google.com/drive/folders/1p_2QvXo0KF1HoxFEsUTW2c-vC_v1VPaL?usp=sharing" target="_blank">Arbeit ansehen</a>
+</div>
+
+<div class="card">
+    <h3>Python-Programmierung</h3>
+    <p>Datenanalyse und Machine-Learning-Projekte mit Python.</p>
+    <a href="https://drive.google.com/drive/folders/1WbQC3weixNUMe05f_oresJzXuhpvVzBP?usp=sharing" target="_blank">Arbeit ansehen</a>
+</div>
+
+<div class="card">
+    <h3>Webentwicklung</h3>
+    <p>Quiz-Website erstellt mit HTML, CSS und JavaScript während eines Hackathons.</p>
+    <a href="https://unixx77.github.io/Ideathon/main" target="_blank">Projekt ansehen</a>
 </div>
 
 </section>
