@@ -69,70 +69,62 @@
     cursor: pointer;
 }
 
+/* ===== PAGE BODY ===== */
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #0f0f1a;
+    color: white;
+}
+
 /* ===== CONTACT SECTION ===== */
-.home {
+.contact-section {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 60px;
     padding: 80px 10%;
     flex-wrap: wrap;
-    font-family: "Segoe UI", sans-serif;
-    color: white;
     min-height: calc(100vh - 100px);
 }
 
-/* ===== SOCIAL ICONS — EXACTLY LIKE home.html ===== */
+/* ===== SOCIAL ICONS — copied from home.html style.css pattern ===== */
 .home-sci {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+    padding-top: 10px;
 }
 
 .home-sci a {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     background: transparent;
     border: 2px solid #fff;
     border-radius: 8px;
-    font-size: 20px;
+    font-size: 22px;
     color: #fff;
     text-decoration: none;
     transition: 0.3s ease;
 }
 
 .home-sci a:hover {
-    background: linear-gradient(90deg, #36d1dc, #ff2e88);
+    background: linear-gradient(135deg, #36d1dc, #ff2e88);
     border-color: transparent;
     color: #fff;
-    transform: scale(1.1) translateY(-3px);
-    box-shadow: 0 5px 15px rgba(255, 46, 136, 0.4);
-}
-
-/* ===== CONTACT IMAGE ===== */
-.ctc-img img {
-    width: 320px;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 12px;
-    transition: 0.4s;
-    border: 3px solid rgba(54, 209, 220, 0.3);
-}
-
-.ctc-img img:hover {
-    transform: scale(1.04);
-    box-shadow: 0 10px 30px rgba(54, 209, 220, 0.25);
-    border-color: rgba(54, 209, 220, 0.7);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(255, 46, 136, 0.35);
 }
 
 /* ===== CONTACT CONTENT ===== */
 .home-content {
-    max-width: 460px;
+    max-width: 500px;
+    width: 100%;
     opacity: 0;
-    animation: fadeIn 1.5s forwards;
+    animation: fadeIn 1.2s forwards;
 }
 
 .home-content h2 {
@@ -142,78 +134,74 @@
     background: linear-gradient(90deg, #36d1dc, #ff2e88);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    color: transparent;
 }
 
 .home-content .subtitle {
     color: #aaa;
     font-size: 15px;
     margin-bottom: 30px;
+    margin-top: 0;
 }
 
 /* Contact rows */
 .contact-row {
     display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    margin-bottom: 22px;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 18px;
     background: #1c1c2b;
     padding: 16px 20px;
     border-radius: 12px;
-    transition: 0.3s;
     border-left: 3px solid #36d1dc;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .contact-row:hover {
-    transform: translateX(5px);
+    transform: translateX(6px);
     box-shadow: 0 4px 20px rgba(54, 209, 220, 0.15);
 }
 
 .contact-row .row-icon {
-    font-size: 24px;
+    font-size: 26px;
     color: #36d1dc;
-    margin-top: 2px;
     flex-shrink: 0;
+    line-height: 1;
 }
 
 .contact-row .row-text h3 {
-    color: #fff;
-    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    font-size: 12px;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin: 0 0 4px 0;
-    opacity: 0.7;
+    letter-spacing: 1.2px;
+    margin: 0 0 3px 0;
+    font-weight: 400;
 }
 
 .contact-row .row-text p {
     color: #eee;
     font-size: 15px;
     margin: 0;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 .contact-row .row-text a {
-    color: #36d1dc;
+    color: #eee;
     text-decoration: none;
-    transition: 0.2s;
+    transition: color 0.2s;
 }
 
 .contact-row .row-text a:hover {
-    color: #ff2e88;
+    color: #36d1dc;
 }
 
 .note {
     color: #ff2e88;
-    font-weight: bold;
-    margin-top: 24px;
+    font-weight: 600;
+    margin-top: 26px;
     display: flex;
     align-items: center;
     gap: 8px;
     font-size: 14px;
-}
-
-.note i {
-    font-size: 18px;
 }
 
 /* Fade-in Animation */
@@ -244,9 +232,9 @@
     </nav>
 </header>
 
-<section class="home">
+<section class="contact-section">
 
-    <!-- SOCIAL ICONS — same style as home.html -->
+    <!-- SOCIAL ICONS -->
     <div class="home-sci">
         <a href="https://www.linkedin.com/in/harshitha-sai-nallagonda-86a071228" target="_blank">
             <i class='bx bxl-linkedin'></i>
@@ -257,11 +245,6 @@
         <a href="https://www.facebook.com/nallagonda.harshithasai?mibextid=ZbWKwL" target="_blank">
             <i class='bx bxl-facebook'></i>
         </a>
-    </div>
-
-    <!-- CONTACT IMAGE -->
-    <div class="ctc-img">
-        <img src="https://tinyurl.com/ctcimg" alt="Contact Image">
     </div>
 
     <!-- ===== ENGLISH ===== -->
@@ -301,7 +284,9 @@
             </div>
         </div>
 
-        <p class="note"><i class='bx bx-left-arrow-alt'></i> Find me on social media too!</p>
+        <p class="note">
+            <i class='bx bx-left-arrow-alt'></i> Find me on social media too!
+        </p>
     </div>
 
     <!-- ===== GERMAN ===== -->
@@ -326,6 +311,14 @@
         </div>
 
         <div class="contact-row">
+            <i class='bx bxl-whatsapp row-icon'></i>
+            <div class="row-text">
+                <h3>WhatsApp</h3>
+                <p>+91 9490568666</p>
+            </div>
+        </div>
+
+        <div class="contact-row">
             <i class='bx bx-map row-icon'></i>
             <div class="row-text">
                 <h3>Standort</h3>
@@ -333,7 +326,9 @@
             </div>
         </div>
 
-        <p class="note"><i class='bx bx-left-arrow-alt'></i> Finde mich auch in sozialen Medien!</p>
+        <p class="note">
+            <i class='bx bx-left-arrow-alt'></i> Finde mich auch in sozialen Medien!
+        </p>
     </div>
 
 </section>
