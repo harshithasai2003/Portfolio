@@ -1,68 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <style>
-  #google_translate_element {
-    text-align: right; 
-  }
-</style>
 <meta charset="UTF-8"> 
-<meta http-equiv="X-UA-Compatible"
-content="IE=edge">
- <meta name="viewport"
-content="width=device-width, initial-scale=1. 0">
-<title>Portfolio </title> 
-<link rel="stylesheet" href="css.css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About - Portfolio</title> 
+<link rel="stylesheet" href="style.css">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 <style>
-p1  {text-align:justify;}
+
+/* ===== ABOUT SECTION ===== */
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    padding: 80px 10%;
+    flex-wrap: wrap;
+}
+
+/* IMAGE STYLE */
+.abt-img img {
+    width: 350px;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: 0.4s;
+}
+
+.abt-img img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* TEXT STYLE */
+.about-content {
+    max-width: 600px;
+}
+
+.about-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #555;
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+/* ===== NAVBAR SAME AS HOME ===== */
+.navbar a {
+    position: relative;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #36d1dc, #ff2e88);
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #ff2e88;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.navbar a.active {
+    color: #ff2e88;
+}
+
+/* ===== HEADER ===== */
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* LANGUAGE SWITCH */
+.lang-switch {
+    display: flex;
+    gap: 15px;
+    margin-left: auto;
+}
+
+.lang-switch button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* BUTTON */
+.btn {
+    background: linear-gradient(90deg, #36d1dc, #ff2e88);
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255,46,136,0.4);
+}
+
 </style>
 </head>
 
 <body>
-      <header class="header">
-      <a href="#" class="logo">Portfolio.</a>
-      <nav class="navbar"> 
-        <a href="home.html" class="active">Home</a>
-        <a href="about.html" class="active">About</a>
-        <a href="skills.html" class="active">Skills</a>
-        <a href="portfolio.html" class="active">Portfolio</a>
-         <a href="contact.html" class="active">Contact</a>
-      </nav>
-      </header>
- <script type="text/javascript">
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-  }
 
-</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
- <section class="home">
-    <div class="home-sci">
-        <a href="https://www.facebook.com/nallagonda.harshithasai?mibextid=ZbWKwL"><i class='bx bxl-facebook'></i></a>
-        <a href="https://www.instagram.com/harshi0803/"><i class='bx bxl-instagram'></i></a>
-        <a href="http://www.linkedin.com/in/nallagonda-harshitha-sai-86a071228"><i class='bx bxl-linkedin'></i></a>
-    </div>
+<header class="header">
+    <a href="#" class="logo">Portfolio.</a>
+
+    <nav class="navbar"> 
+        <a href="home.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+
+        <div class="lang-switch">
+            <button onclick="setLanguage('en')">EN</button>
+            <button onclick="setLanguage('de')">DE</button>
+        </div>
+    </nav>
+</header>
+
+<section class="about">
 
     <div class="abt-img">
-                <img src="Hari_about.JPG" height="420px" width="350px">
+        <img src="Hari_about.JPG" alt="Profile Image">
+    </div>
+
+    <div class="about-content">
+
+        <!-- TITLE -->
+        <h1 id="about-en">About Me</h1>
+        <h1 id="about-de" style="display:none;">Über mich</h1>
+
+        <!-- ENGLISH -->
+        <div id="text-en">
+            <p>
+                I am a Scientific Computing student with a strong fascination for technology and innovation. 
+                Being born in the 21st century, I feel privileged to witness how rapidly humanity is advancing 
+                by transforming creative ideas into real-world solutions.
+            </p>
+
+            <p>
+                My passion lies in solving complex scientific and engineering problems using mathematics, 
+                algorithms, and programming. I am especially interested in how computational methods can be 
+                applied to understand and model real-world systems.
+            </p>
+
+            <p>
+                As a curious and dedicated learner, I continuously strive to improve my skills in programming 
+                and computational techniques. My goal is to grow in the field of Computer Science and contribute 
+                to meaningful technological and scientific advancements.
+            </p>
         </div>
 
-    <div class="home-content">
-        <div><h1>About Me:- </h1></div>
-        <div>
-            <p1> Technology has always fascinated and inspired me.
-             It is a privilege to be born in the 21st Century and witness the human race push the boundaries of creativity and innovation, creating what once was impossible. 
-             Every day, the world in which we live undergoes enormous transformations. New technologies are regularly emerging in every field. 
-             Most notably, several tools and technologies have been emerging rapidly in Computer Science. I have, with great interest, observed this evolution of Computer Technology.
-             As a continuous learner, I, Harshitha Sai Nallagonda, aim to become knowledgeable about and familiar with as many tools and technologies as possible to stay up-to-date in the swiftly advancing world.
-            </p1>
-        </div></div>
+        <!-- GERMAN -->
+        <div id="text-de" style="display:none;">
+            <p>
+                Ich bin Studentin im Bereich Scientific Computing mit einer großen Begeisterung für Technologie und Innovation. 
+                Als jemand, der im 21. Jahrhundert geboren wurde, empfinde ich es als Privileg, mitzuerleben, 
+                wie sich die Menschheit rasant entwickelt und kreative Ideen in reale Lösungen umsetzt.
+            </p>
 
+            <p>
+                Meine Leidenschaft liegt darin, komplexe wissenschaftliche und technische Probleme mithilfe von Mathematik, 
+                Algorithmen und Programmierung zu lösen. Besonders interessiert mich, wie rechnergestützte Methoden 
+                eingesetzt werden können, um reale Systeme zu verstehen und zu modellieren.
+            </p>
 
- </section>
+            <p>
+                Als neugierige und engagierte Lernende arbeite ich kontinuierlich daran, meine Fähigkeiten in der Programmierung 
+                und in rechnergestützten Techniken zu verbessern. Mein Ziel ist es, im Bereich Informatik zu wachsen und 
+                zu bedeutenden technologischen und wissenschaftlichen Entwicklungen beizutragen.
+            </p>
+        </div>
 
+        <a href="contact.html" class="btn">Contact Me</a>
 
+    </div>
+
+</section>
+
+<script>
+function setLanguage(lang) {
+    if (lang === 'en') {
+        document.getElementById('text-en').style.display = 'block';
+        document.getElementById('text-de').style.display = 'none';
+        document.getElementById('about-en').style.display = 'block';
+        document.getElementById('about-de').style.display = 'none';
+    } else {
+        document.getElementById('text-en').style.display = 'none';
+        document.getElementById('text-de').style.display = 'block';
+        document.getElementById('about-en').style.display = 'none';
+        document.getElementById('about-de').style.display = 'block';
+    }
+}
+</script>
 
 </body>
 </html>
