@@ -35,10 +35,27 @@ body {
     color: white;
     margin-left: 20px;
     text-decoration: none;
+    position: relative;
+    transition: 0.3s;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #36d1dc, #ff2e88);
+    transition: 0.3s;
 }
 
 .navbar a:hover {
     color: #ff2e88;
+}
+
+.navbar a:hover::after {
+    width: 100%;
 }
 
 /* LANGUAGE BUTTONS */
@@ -87,9 +104,15 @@ body {
     padding: 12px 25px;
     background: linear-gradient(90deg, #36d1dc, #ff2e88);
     color: white;
-    border-radius: 8px;
+    border-radius: 30px;
     text-decoration: none;
     margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255,46,136,0.4);
 }
 </style>
 
@@ -101,7 +124,7 @@ body {
     <a href="#" class="logo">Portfolio.</a>
 
     <nav class="navbar">
-        <a href="home.html">Home</a>
+        <a href="home.html" class="active">Home</a>
         <a href="about.html">About</a>
         <a href="skills.html">Skills</a>
         <a href="portfolio.html">Portfolio</a>
@@ -118,14 +141,14 @@ body {
 <section id="en" class="home">
 
     <div class="home-sci">
-        <a href="https://www.facebook.com/nallagonda.harshithasai?mibextid=ZbWKwL"><i class='bx bxl-facebook'></i></a>
-        <a href="https://www.instagram.com/harshi0803/"><i class='bx bxl-instagram'></i></a>
-        <a href="http://www.linkedin.com/in/nallagonda-harshitha-sai-86a071228"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://www.facebook.com/nallagonda.harshithasai?mibextid=ZbWKwL" target="_blank"><i class='bx bxl-facebook'></i></a>
+        <a href="https://www.instagram.com/harshi0803/" target="_blank"><i class='bx bxl-instagram'></i></a>
+        <a href="https://www.linkedin.com/in/nallagonda-harshitha-sai-86a071228" target="_blank"><i class='bx bxl-linkedin'></i></a>
     </div>
 
     <h2>Please click on the button below to view my CV.</h2>
 
-    <a href="https://drive.google.com/file/d/1Kj1QRU4KWhUBT2thcFhQPlw5d5RGbrE_/view?usp=sharing" class="btn">
+    <a href="https://drive.google.com/file/d/1Kj1QRU4KWhUBT2thcFhQPlw5d5RGbrE_/view?usp=sharing" class="btn" target="_blank">
         CV
     </a>
 
@@ -135,14 +158,14 @@ body {
 <section id="de" class="home" style="display:none;">
 
     <div class="home-sci">
-        <a href="https://www.facebook.com/nallagonda.harshithasai?mibextid=ZbWKwL"><i class='bx bxl-facebook'></i></a>
-        <a href="https://www.instagram.com/harshi0803/"><i class='bx bxl-instagram'></i></a>
-        <a href="http://www.linkedin.com/in/nallagonda-harshitha-sai-86a071228"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://www.facebook.com/nallagonda.harshithasai?mibextid=ZbWKwL" target="_blank"><i class='bx bxl-facebook'></i></a>
+        <a href="https://www.instagram.com/harshi0803/" target="_blank"><i class='bx bxl-instagram'></i></a>
+        <a href="https://www.linkedin.com/in/nallagonda-harshitha-sai-86a071228" target="_blank"><i class='bx bxl-linkedin'></i></a>
     </div>
 
     <h2>Bitte klicken Sie auf den Button unten, um meinen Lebenslauf anzusehen.</h2>
 
-    <a href="https://drive.google.com/file/d/1Kj1QRU4KWhUBT2thcFhQPlw5d5RGbrE_/view?usp=sharing" class="btn">
+    <a href="https://drive.google.com/file/d/1Kj1QRU4KWhUBT2thcFhQPlw5d5RGbrE_/view?usp=sharing" class="btn" target="_blank">
         Lebenslauf
     </a>
 
