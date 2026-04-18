@@ -2,45 +2,159 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"> 
-<meta http-equiv="X-UA-Compatible"
-content="IE=edge">
- <meta name="viewport"
-content="width=device-width, initial-scale=1. 0">
-<title>Portfolio </title> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfolio</title>
+
 <link rel="stylesheet" href="css.css">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f0f1a;
+    color: white;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 20px 10%;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #ff2e88;
+}
+
+.lang-switch {
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
+}
+
+.lang-switch button {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.home-sci {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.home-sci a {
+    font-size: 28px;
+    color: #36d1dc;
+    transition: 0.3s;
+}
+
+.home-sci a:hover {
+    color: #ff2e88;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(90deg, #36d1dc, #ff2e88);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+</style>
+
 </head>
 
 <body>
-      <header class="header">
-      <a href="#" class="logo">Portfolio.</a>
-      <nav class="navbar"> 
-        <a href="home.html" class="active">Home</a>
-        <a href="about.html" class="active">About</a>
-        <a href="skills.html" class="active">Skills</a>
-        <a href="portfolio.html" class="active">Portfolio</a>
-         <a href="contact.html" class="active">Contact</a>
-      </nav>
-      </header>
 
- <section class="home">
+<header class="header">
+    <a href="#" class="logo">Portfolio.</a>
+
+    <nav class="navbar">
+        <a href="home.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+
+        <div class="lang-switch">
+            <button onclick="setLanguage('en')">EN</button>
+            <button onclick="setLanguage('de')">DE</button>
+        </div>
+    </nav>
+</header>
+
+<!-- ================= ENGLISH ================= -->
+<section class="home" id="en">
+
     <div class="home-sci">
         <a href="https://www.facebook.com/nallagonda.harshithasai?mibextid=ZbWKwL"><i class='bx bxl-facebook'></i></a>
         <a href="https://www.instagram.com/harshi0803/"><i class='bx bxl-instagram'></i></a>
         <a href="http://www.linkedin.com/in/nallagonda-harshitha-sai-86a071228"><i class='bx bxl-linkedin'></i></a>
     </div>
-    <div class="home-content">
-        <h2>Please click on the button beside to view my CV.</h2></div>
-        <div>
-         <section>
-        <a href="https://drive.google.com/file/d/1Kj1QRU4KWhUBT2thcFhQPlw5d5RGbrE_/view?usp=sharing" class="btn">CV</a>
-         
-        
-          </section>
-        </div>
- </section>
 
+    <div class="home-content">
+        <h2>Please click on the button beside to view my CV.</h2>
+    </div>
+
+    <a href="https://drive.google.com/file/d/1Kj1QRU4KWhUBT2thcFhQPlw5d5RGbrE_/view?usp=sharing" class="btn">
+        CV
+    </a>
+
+</section>
+
+<!-- ================= GERMAN ================= -->
+<section class="home" id="de" style="display:none;">
+
+    <div class="home-sci">
+        <a href="https://www.facebook.com/nallagonda.harshithasai?mibextid=ZbWKwL"><i class='bx bxl-facebook'></i></a>
+        <a href="https://www.instagram.com/harshi0803/"><i class='bx bxl-instagram'></i></a>
+        <a href="http://www.linkedin.com/in/nallagonda-harshitha-sai-86a071228"><i class='bx bxl-linkedin'></i></a>
+    </div>
+
+    <div class="home-content">
+        <h2>Bitte klicken Sie auf den Button nebenan, um meinen Lebenslauf zu sehen.</h2>
+    </div>
+
+    <a href="https://drive.google.com/file/d/1Kj1QRU4KWhUBT2thcFhQPlw5d5RGbrE_/view?usp=sharing" class="btn">
+        Lebenslauf
+    </a>
+
+</section>
+
+<script>
+function setLanguage(lang) {
+    document.getElementById('en').style.display = (lang === 'en') ? 'flex' : 'none';
+    document.getElementById('de').style.display = (lang === 'de') ? 'flex' : 'none';
+}
+</script>
 
 </body>
 </html>
-
