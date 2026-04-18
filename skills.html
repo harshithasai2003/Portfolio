@@ -19,27 +19,27 @@ body {
     color: white;
 }
 
-/* ===== HEADER ===== */
+/* ===== HEADER (MATCH HOME/ABOUT) ===== */
 .header {
     display: flex;
     align-items: center;
-    padding: 20px 10%; /* Match padding with Home page */
+    padding: 25px 10%;
     width: 100%;
 }
 
 .navbar {
     display: flex;
     align-items: center;
-    width: 100%;
+    gap: 50px; /* match Home spacing */
+    margin-left: 50px;
 }
 
 .navbar a {
     position: relative;
     color: #fff;
-    margin-left: 30px; /* Match spacing with Home page */
     text-decoration: none;
     transition: 0.3s;
-    font-size: 18px; /* Uniform font size */
+    font-size: 17px;
 }
 
 .navbar a::after {
@@ -82,7 +82,7 @@ body {
 
 /* ===== CONTENT ===== */
 .container {
-    width: 85%;
+    width: 80%; /* match Home/About */
     margin: 60px auto;
 }
 
@@ -166,7 +166,7 @@ h2 {
     animation: fadeIn 1s forwards;
 }
 
-/* ===== BUTTON ===== */
+/* ===== BUTTON FIXED ===== */
 .btn {
     background: linear-gradient(90deg, #36d1dc, #ff2e88);
     border: none;
@@ -214,7 +214,7 @@ h2 {
     </nav>
 </header>
 
-<!-- ================= ENGLISH ================= -->
+<!-- ===== ENGLISH CONTENT ===== -->
 <section class="container" id="en">
 
 <h2>Languages & Skills</h2>
@@ -288,7 +288,7 @@ h2 {
 
 </section>
 
-<!-- ================= GERMAN ================= -->
+<!-- ===== GERMAN CONTENT ===== -->
 <section class="container" id="de" style="display:none;">
 
 <h2>Sprachen & Fähigkeiten</h2>
@@ -298,7 +298,7 @@ h2 {
         <h3>Programmierung & Web</h3>
         <ul>
             <li>Python</li>
-            <li>R-Programmierung</li>
+            <li>R Programmierung</li>
             <li>C und C++</li>
             <li>Java</li>
             <li>SQL</li>
@@ -332,26 +332,26 @@ h2 {
 
 <div class="card">
     <h3>Bachelorarbeit</h3>
-    <p>Harmony Forecast: Verwendung von Machine Learning zur Vorhersage der Beziehungsqualität</p>
+    <p>Harmony Forecast: Einsatz von Machine Learning zur Vorhersage der Beziehungsqualität</p>
     <a href="https://ieeexplore.ieee.org/document/10675070" target="_blank">Arbeit ansehen</a>
 </div>
 
 <div class="card">
-    <h3>Forschungsarbeit</h3>
-    <p>Erkennung von Gehirntumoren mit verbesserter Segmentierung und Machine-Learning-Klassifikation</p>
-    <a href="https://drive.google.com/file/d/1z5qxzLuTEYB3gMwclJElkimCmIPnV4gJ/view?usp=sharing" target="_blank">Arbeit ansehen</a>
+    <h3>Forschungspapier</h3>
+    <p>Erkennung von Gehirntumoren durch verbesserte Segmentierung und Machine Learning Klassifikation</p>
+    <a href="https://drive.google.com/file/d/1z5qxzLuTEYB3gMwclJElkimCmIPnV4gJ/view?usp=sharing" target="_blank">Papier ansehen</a>
 </div>
 
 <div class="card">
-    <h3>R-Programmierung</h3>
-    <p>Datenanalyse von realen Datensätzen mit R-Programmiersprache.</p>
-    <a href="https://drive.google.com/drive/folders/1p_2QvXo0KF1HoxFEsUTW2c-vC_v1VPaL?usp=sharing" target="_blank">Arbeit ansehen</a>
+    <h3>R Programmierung</h3>
+    <p>Datenanalyse realer Datensätze mit R Programmierung.</p>
+    <a href="https://drive.google.com/drive/folders/1p_2QvXo0KF1HoxFEsUTW2c-vC_v1VPaL?usp=sharing" target="_blank">Arbeiten ansehen</a>
 </div>
 
 <div class="card">
-    <h3>Python-Programmierung</h3>
-    <p>Datenanalyse und Machine-Learning-Projekte mit Python.</p>
-    <a href="https://drive.google.com/drive/folders/1WbQC3weixNUMe05f_oresJzXuhpvVzBP?usp=sharing" target="_blank">Arbeit ansehen</a>
+    <h3>Python Programmierung</h3>
+    <p>Datenanalyse und Machine Learning Projekte mit Python.</p>
+    <a href="https://drive.google.com/drive/folders/1WbQC3weixNUMe05f_oresJzXuhpvVzBP?usp=sharing" target="_blank">Arbeiten ansehen</a>
 </div>
 
 <div class="card">
@@ -367,6 +367,18 @@ function setLanguage(lang) {
     document.getElementById('en').style.display = (lang === 'en') ? 'block' : 'none';
     document.getElementById('de').style.display = (lang === 'de') ? 'block' : 'none';
 }
+
+// Scroll fade-in
+window.addEventListener('scroll', function() {
+    const elements = document.querySelectorAll('.skills-box, .card');
+    elements.forEach(element => {
+        const position = element.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.2;
+        if (position < screenPosition) {
+            element.classList.add('show');
+        }
+    });
+});
 </script>
 
 </body>
