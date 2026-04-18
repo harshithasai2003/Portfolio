@@ -21,7 +21,8 @@ body {
 .header {
     display: flex;
     align-items: center;
-    padding: 20px 10%;
+    padding: 25px 10%; /* match Home/About */
+    width: 100%;
 }
 
 .logo {
@@ -35,15 +36,16 @@ body {
 .navbar {
     display: flex;
     align-items: center;
-    width: 100%;
+    gap: 50px; /* same spacing as Home/About */
+    margin-left: 50px; /* push links slightly from logo */
 }
 
 .navbar a {
-    color: white;
-    margin-left: 20px;
-    text-decoration: none;
     position: relative;
+    color: #fff;
+    text-decoration: none;
     transition: 0.3s;
+    font-size: 17px;
 }
 
 .navbar a::after {
@@ -61,29 +63,29 @@ body {
     color: #ff2e88;
 }
 
-.navbar a:hover::after {
+.navbar a:hover::after,
+.navbar a.active::after {
     width: 100%;
 }
 
 /* ---------------- LANGUAGE SWITCH ---------------- */
 .lang-switch {
-    margin-left: auto;
     display: flex;
-    gap: 10px;
+    gap: 15px;
+    margin-left: auto; /* pushes language buttons to the right */
 }
 
 .lang-switch button {
     background: transparent;
-    border: 1px solid #444;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 16px;
     cursor: pointer;
     transition: 0.3s;
 }
 
 .lang-switch button:hover {
-    background: #ff2e88;
+    color: #36d1dc;
 }
 
 /* ---------------- HERO SECTION ---------------- */
@@ -109,6 +111,11 @@ body {
     color: #bbb;
     max-width: 600px;
     margin: 0 auto 30px;
+}
+
+.home h3 {
+    color: #fff;
+    margin-top: 20px;
 }
 
 /* ---------------- BUTTON ---------------- */
@@ -149,13 +156,13 @@ body {
 <body>
 
 <header class="header">
-    <div class="logo">Portfolio.</div>
+    <a href="#" class="logo">Portfolio.</a>
 
     <nav class="navbar">
-        <a href="home.html" class="active">Home</a>
+        <a href="home.html">Home</a>
         <a href="about.html">About</a>
         <a href="skills.html">Skills</a>
-        <a href="portfolio.html">Portfolio</a>
+        <a href="portfolio.html" class="active">Portfolio</a>
         <a href="contact.html">Contact</a>
 
         <div class="lang-switch">
