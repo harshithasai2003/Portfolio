@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Portfolio</title> 
+<title>About - Portfolio</title> 
 <link rel="stylesheet" href="style.css">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
@@ -38,19 +38,34 @@
 /* TEXT STYLE */
 .about-content {
     max-width: 600px;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    opacity: 0;  /* Initially hidden */
+    animation: fadeIn 1.5s forwards;
 }
 
 .about-content h1 {
     font-size: 36px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .about-content p {
     font-size: 17px;
     line-height: 1.8;
-    color: #555;
+    color: white;
     text-align: justify;
     margin-bottom: 15px;
+}
+
+/* Fade-in Animation for Scroll */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.about-content.show {
+    animation: fadeIn 1s forwards;
 }
 
 /* ===== NAVBAR SAME AS HOME ===== */
@@ -110,14 +125,20 @@
     cursor: pointer;
 }
 
-/* BUTTON */
+/* BUTTON - CONTACT ME */
 .btn {
     background: linear-gradient(90deg, #36d1dc, #ff2e88);
     border: none;
     color: white;
-    padding: 10px 25px;
+    padding: 15px 35px;
+    font-size: 18px;
     border-radius: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1.5px;
     transition: 0.3s;
+    display: inline-block;
+    margin-top: 20px;
 }
 
 .btn:hover {
@@ -201,7 +222,7 @@
             </p>
         </div>
 
-        <a href="contact.html" class="btn">Contact Me</a>
+        <a href="contact.html" class="btn">Let's Get in Touch!</a>
 
     </div>
 
@@ -221,6 +242,18 @@ function setLanguage(lang) {
         document.getElementById('about-de').style.display = 'block';
     }
 }
+
+// Scroll-based fade-in effect
+window.addEventListener('scroll', function() {
+    const elements = document.querySelectorAll('.about-content');
+    elements.forEach(element => {
+        const position = element.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.2;
+        if (position < screenPosition) {
+            element.classList.add('show');
+        }
+    });
+});
 </script>
 
 </body>
