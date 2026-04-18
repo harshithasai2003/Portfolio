@@ -40,7 +40,7 @@
     max-width: 600px;
     color: white;
     font-family: 'Times New Roman', Times, serif;
-    opacity: 0;  /* Initially hidden */
+    opacity: 0;
     animation: fadeIn 1.5s forwards;
 }
 
@@ -58,7 +58,7 @@
     margin-bottom: 15px;
 }
 
-/* Fade-in Animation for Scroll */
+/* Fade-in Animation */
 @keyframes fadeIn {
     0% { opacity: 0; transform: translateY(20px); }
     100% { opacity: 1; transform: translateY(0); }
@@ -68,7 +68,7 @@
     animation: fadeIn 1s forwards;
 }
 
-/* ===== NAVBAR SAME AS HOME ===== */
+/* ===== NAVBAR ===== */
 .navbar a {
     position: relative;
     color: #fff;
@@ -125,20 +125,24 @@
     cursor: pointer;
 }
 
-/* BUTTON - CONTACT ME */
+/* ===== BUTTON ===== */
 .btn {
     background: linear-gradient(90deg, #36d1dc, #ff2e88);
     border: none;
     color: white;
-    padding: 15px 35px;
-    font-size: 18px;
+    padding: 12px 28px;
+    font-size: 16px;
     border-radius: 30px;
     text-transform: uppercase;
     font-weight: bold;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
     transition: 0.3s;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 20px;
+    text-decoration: none;
+    white-space: nowrap;
 }
 
 .btn:hover {
@@ -176,7 +180,6 @@
 
     <div class="about-content">
 
-        <!-- TITLE -->
         <h1 id="about-en">About Me</h1>
         <h1 id="about-de" style="display:none;">Über mich</h1>
 
@@ -190,8 +193,8 @@
 
             <p>
                 My passion lies in solving complex scientific and engineering problems using mathematics, 
-                algorithms, and programming. I am especially interested in how computational methods can be 
-                applied to understand and model real-world systems.
+                Computer Science, and programming. I am especially interested in how computational methods 
+                can be applied to understand and model real-world systems.
             </p>
 
             <p>
@@ -211,7 +214,7 @@
 
             <p>
                 Meine Leidenschaft liegt darin, komplexe wissenschaftliche und technische Probleme mithilfe von Mathematik, 
-                Algorithmen und Programmierung zu lösen. Besonders interessiert mich, wie rechnergestützte Methoden 
+                Computer Science und Programmierung zu lösen. Besonders interessiert mich, wie rechnergestützte Methoden 
                 eingesetzt werden können, um reale Systeme zu verstehen und zu modellieren.
             </p>
 
@@ -222,7 +225,7 @@
             </p>
         </div>
 
-        <a href="contact.html" class="btn">Contact Me!</a>
+        <a href="contact.html" class="btn">Contact Me</a>
 
     </div>
 
@@ -243,7 +246,7 @@ function setLanguage(lang) {
     }
 }
 
-// Scroll-based fade-in effect
+// Scroll fade-in
 window.addEventListener('scroll', function() {
     const elements = document.querySelectorAll('.about-content');
     elements.forEach(element => {
